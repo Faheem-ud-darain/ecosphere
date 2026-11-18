@@ -1,0 +1,2172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoSphere Nexus – Environmental sustainability, from the Hazara hills</title>
+<meta name="description" content="A field guide to environmental sustainability: seven topics, fifty years of global agreements, a local case study of Abbottabad, a quiz and a personal pledge.">
+<meta property="og:title" content="EcoSphere Nexus">
+<meta property="og:description" content="A field guide to environmental sustainability, written from COMSATS Abbottabad.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#eff2e7">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%232c7a4b'/%3E%3Cpath d='M16 6 L24 24 H8 Z' fill='%23eff2e7'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Modak&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --forest: #0a2318;
+  --forest-2: #123626;
+  --lime: #b9e48a;
+  --cream: #f1f5e9;
+  --paper: #eef2e6;
+  --paper-2: #e2e9d6;
+  --paper-3: #d3ddc3;
+  --ink: #0f2418;
+  --ink-2: #42544a;
+  --ink-3: #62736a;
+  --rule: #ccd6bf;
+  --rule-strong: #0f2418;
+  --accent: #2c7a4b;
+  --accent-deep: #1d5a36;
+  --good: #2c7a4b;
+  --bad: #9b2c1f;
+
+  /* HEADING FONT: placeholder, swap this one line once the final font is chosen */
+  --heading: "Modak", "Poppins", system-ui, sans-serif;
+  --sans: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --max: 1240px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 28px;
+  --r-xl: 44px;
+
+  --z-header: 20;
+  --z-overlay: 40;
+  --z-toast: 50;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: .97rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background-image: radial-gradient(ellipse 60% 40% at 85% -5%, rgba(80,150,100,.16), transparent 70%), radial-gradient(ellipse 50% 35% at 0% 100%, rgba(80,150,100,.10), transparent 70%);
+  background-attachment: fixed;
+}
+/* paper grain */
+body::before {
+  content: "";
+  position: fixed; inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: .07;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+::selection { background: var(--accent); color: var(--paper); }
+img { display: block; max-width: 100%; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; text-align: inherit; }
+a { color: inherit; }
+h1, h2, h3, h4, p, ul, ol, dl, dd, figure { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+h1, h2, h3 { text-wrap: balance; font-weight: 400; }
+p { text-wrap: pretty; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: var(--r-md); }
+
+.skip {
+  position: absolute; left: var(--gutter); top: -4rem;
+  background: var(--ink); color: var(--paper);
+  padding: .6rem 1rem; z-index: 200; transition: top .2s var(--ease);
+}
+.skip:focus { top: .75rem; }
+
+.wrap { width: 100%; max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
+
+/* ---------- type ---------- */
+.serif { font-family: var(--heading); }
+.mono { font-family: var(--mono); }
+.eyebrow {
+  font-family: var(--mono); font-size: .75rem; letter-spacing: .04em;
+  color: var(--ink-2);
+}
+.eyebrow b { color: var(--accent); font-weight: 500; margin-right: .6rem; }
+.display {
+  font-family: var(--heading);
+  font-size: clamp(2.9rem, 7.2vw, 6.25rem);
+  line-height: .98;
+  letter-spacing: -0.025em;
+}
+.display em { font-style: italic; color: var(--accent); }
+.h1 {
+  font-family: var(--heading);
+  font-size: clamp(2.4rem, 5.4vw, 4.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+.h2 {
+  font-family: var(--heading);
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+.h3 { font-family: var(--heading); font-size: 1.5rem; line-height: 1.15; letter-spacing: -0.01em; }
+.lede { font-size: clamp(1.05rem, 1.5vw, 1.2rem); line-height: 1.55; color: var(--ink-2); max-width: 58ch; }
+.prose { max-width: 62ch; color: var(--ink); }
+.prose p + p { margin-top: 1em; }
+.small { font-size: .875rem; color: var(--ink-2); }
+.muted { color: var(--ink-2); }
+
+/* ---------- header ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: var(--z-header);
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rule);
+}
+.header-row { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; height: 4rem; }
+.brand { display: flex; align-items: baseline; gap: .75rem; }
+.brand-name { font-family: var(--heading); font-size: 1.55rem; letter-spacing: -0.01em; line-height: 1; }
+.brand-sub { font-family: var(--mono); font-size: .7rem; color: var(--ink-3); display: none; white-space: nowrap; }
+.nav { display: none; align-items: center; gap: .25rem; }
+.nav button {
+  position: relative; padding: .45rem .75rem; font-size: .9rem; color: var(--ink-2);
+  transition: color .2s var(--ease);
+}
+.nav button::after {
+  content: ""; position: absolute; left: .75rem; right: .75rem; bottom: .1rem; height: 1px;
+  background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform .3s var(--ease);
+}
+.nav button:hover { color: var(--ink); }
+.nav button:hover::after, .nav button.active::after { transform: scaleX(1); }
+.nav button.active { color: var(--ink); }
+.index-btn {
+  display: inline-flex; align-items: center; gap: .6rem;
+  padding: .45rem .9rem; border: 1px solid var(--ink); border-radius: 999px;
+  font-size: .85rem; font-weight: 500;
+  transition: background .2s var(--ease), color .2s var(--ease), transform .15s var(--ease);
+}
+.index-btn:hover { background: var(--ink); color: var(--paper); }
+.index-btn:active { transform: scale(.98); }
+.index-btn kbd { font-family: var(--mono); font-size: .7rem; opacity: .6; display: none; }
+@media (min-width: 1500px) { .brand-sub { display: inline; } }
+@media (min-width: 640px) { .index-btn kbd { display: inline; } }
+@media (min-width: 1200px) { .nav { display: flex; } }
+
+/* ---------- buttons & links ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: .6rem;
+  padding: .85rem 1.4rem; border-radius: 999px;
+  background: var(--accent); color: #f4fbf4; font-weight: 500; font-size: .95rem;
+  transition: background .2s var(--ease), transform .15s var(--ease);
+}
+.btn:hover { background: var(--accent-deep); }
+.btn:active { transform: translateY(1px) scale(.99); }
+.btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+.btn-ghost:hover { background: var(--ink); color: var(--paper); }
+.link {
+  display: inline-flex; align-items: center; gap: .5rem; font-weight: 500;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat;
+  padding-bottom: 2px; transition: background-size .3s var(--ease), color .2s;
+}
+.link:hover { color: var(--accent); background-size: 0 1px; background-position: 100% 100%; }
+.arrow { display: inline-block; transition: transform .25s var(--ease); }
+a:hover .arrow, button:hover > .arrow, .row:hover .arrow { transform: translateX(4px); }
+
+/* ---------- layout bits ---------- */
+main { flex: 1; padding-block: clamp(2.5rem, 6vw, 5rem) clamp(3rem, 7vw, 6rem); }
+.view > * + * { margin-top: clamp(3rem, 7vw, 6rem); }
+.view { animation: rise .55s var(--ease) both; }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.stagger > * { animation: rise .6s var(--ease) both; }
+.stagger > *:nth-child(2) { animation-delay: .06s; }
+.stagger > *:nth-child(3) { animation-delay: .12s; }
+.stagger > *:nth-child(4) { animation-delay: .18s; }
+.stagger > *:nth-child(5) { animation-delay: .24s; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+.section-head {
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .5rem 2rem;
+  padding-bottom: 1rem; border-bottom: 1px solid var(--rule-strong); margin-bottom: .5rem;
+}
+
+.hero { display: grid; gap: 3rem; }
+.hero-copy > * + * { margin-top: 1.75rem; }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem 1.75rem; padding-top: .5rem; }
+.hero-figure { position: relative; }
+.hero-figure .frame { aspect-ratio: 4 / 5; background: var(--paper-3); overflow: hidden; border-radius: var(--r-lg); }
+.hero-figure img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.85) contrast(1.02); }
+.hero-figure figcaption { margin-top: .6rem; font-family: var(--mono); font-size: .72rem; color: var(--ink-3); }
+@media (min-width: 960px) {
+  .hero { grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 5rem; align-items: end; }
+  .hero-figure { margin-bottom: -1.5rem; }
+  .hero-figure .frame { aspect-ratio: 3 / 4; }
+}
+
+.facts { display: grid; border-top: 1px solid var(--rule-strong); }
+.fact { padding: 1.5rem 0; border-bottom: 1px solid var(--rule); }
+.fact-n { font-family: var(--heading); font-size: clamp(2.8rem, 5vw, 4rem); line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.fact-l { margin-top: .5rem; font-size: .9rem; color: var(--ink-2); max-width: 30ch; }
+@media (min-width: 720px) {
+  .facts { grid-template-columns: repeat(3, 1fr); }
+  .fact { border-bottom: 0; padding-right: 2rem; }
+  .fact + .fact { padding-left: 2rem; border-left: 1px solid var(--rule); }
+}
+
+/* contents list */
+.toc { display: grid; gap: 0 4rem; }
+@media (min-width: 900px) { .toc { grid-template-columns: 1fr 1fr; } }
+.row {
+  display: grid; grid-template-columns: 2.5rem 1fr auto; align-items: baseline; gap: 1rem;
+  padding: 1.1rem 0; border-bottom: 1px solid var(--rule); width: 100%;
+  transition: padding-left .3s var(--ease), color .2s;
+}
+.row:hover { padding-left: .5rem; }
+.row:hover .row-title { color: var(--accent); }
+.row-num { font-family: var(--mono); font-size: .75rem; color: var(--ink-3); }
+.row-title { font-family: var(--heading); font-size: 1.45rem; line-height: 1.15; transition: color .2s; }
+.row-desc { font-size: .875rem; color: var(--ink-2); margin-top: .2rem; max-width: 46ch; }
+
+/* ---------- topic page ---------- */
+.page-head { display: grid; gap: 1.5rem; }
+.page-head .lede { margin-top: .25rem; }
+.stats { display: grid; border-top: 1px solid var(--rule-strong); }
+.stat { padding: 1.25rem 0; border-bottom: 1px solid var(--rule); }
+.stat-l { font-family: var(--mono); font-size: .72rem; color: var(--ink-3); letter-spacing: .02em; }
+.stat-v { font-family: var(--heading); font-size: clamp(2rem, 3.6vw, 2.8rem); line-height: 1.05; letter-spacing: -0.015em; margin-top: .3rem; font-variant-numeric: tabular-nums; }
+.stat-n { font-size: .85rem; color: var(--ink-2); margin-top: .35rem; }
+@media (min-width: 800px) {
+  .stats { grid-template-columns: repeat(3, 1fr); }
+  .stat { border-bottom: 0; padding-right: 1.75rem; }
+  .stat + .stat { padding-left: 1.75rem; border-left: 1px solid var(--rule); }
+}
+.banner { aspect-ratio: 16 / 7; background: var(--paper-3); overflow: hidden; border-radius: var(--r-lg); }
+.banner img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.85); }
+@media (max-width: 640px) { .banner { aspect-ratio: 4 / 3; } }
+.split { display: grid; gap: 2.5rem; }
+@media (min-width: 960px) { .split { grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 5rem; } .split.flip { grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); } }
+.aside-fig img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--paper-3); filter: saturate(.9); border-radius: var(--r-lg); }
+.aside-fig figcaption { margin-top: .7rem; font-size: .85rem; color: var(--ink-2); font-style: italic; max-width: 44ch; }
+.source { margin-top: 2rem; padding-left: 1rem; border-left: 2px solid var(--accent); font-size: .85rem; color: var(--ink-2); max-width: 62ch; }
+.source b { font-family: var(--mono); font-weight: 500; font-size: .7rem; letter-spacing: .04em; color: var(--ink); display: block; margin-bottom: .25rem; }
+.cols { display: grid; gap: 3rem; }
+@media (min-width: 860px) { .cols { grid-template-columns: 1fr 1fr; gap: 5rem; } }
+.numbered { margin-top: 1rem; counter-reset: n; border-top: 1px solid var(--rule-strong); }
+.numbered li {
+  counter-increment: n; position: relative; padding: 1rem 0 1rem 2.4rem; border-bottom: 1px solid var(--rule);
+  font-size: .95rem; color: var(--ink);
+}
+.numbered li::before {
+  content: counter(n, decimal-leading-zero); position: absolute; left: 0; top: 1.15rem;
+  font-family: var(--mono); font-size: .72rem; color: var(--ink-3);
+}
+.numbered.fix li::before { color: var(--accent); }
+
+/* pager */
+.pager { display: flex; justify-content: space-between; gap: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--rule-strong); }
+.pager button { display: block; max-width: 22rem; }
+.pager .next { text-align: right; margin-left: auto; }
+.pager small { display: block; font-family: var(--mono); font-size: .7rem; color: var(--ink-3); margin-bottom: .2rem; }
+.pager span { font-family: var(--heading); font-size: 1.35rem; line-height: 1.15; transition: color .2s; }
+.pager button:hover span { color: var(--accent); }
+
+/* ---------- SDGs, tech ---------- */
+.ruled { border-top: 1px solid var(--rule-strong); }
+.ruled-item { display: grid; gap: .75rem 3rem; padding: 1.75rem 0; border-bottom: 1px solid var(--rule); }
+@media (min-width: 860px) { .ruled-item { grid-template-columns: 11rem minmax(0, 1fr) minmax(0, 1fr); } }
+.tag { font-family: var(--mono); font-size: .75rem; color: var(--accent); }
+.ruled-item h3 { font-family: var(--heading); font-size: 1.6rem; line-height: 1.12; font-weight: 400; }
+.ruled-item p { font-size: .95rem; color: var(--ink-2); }
+.ruled-item .target { color: var(--ink); font-size: .9rem; padding-left: 1rem; border-left: 1px solid var(--rule); }
+.tech { display: grid; gap: 0 5rem; }
+@media (min-width: 860px) { .tech { grid-template-columns: 1fr 1fr; } }
+.tech-item { padding: 1.75rem 0; border-bottom: 1px solid var(--rule); }
+.tech-item p { margin-top: .6rem; font-size: .95rem; color: var(--ink-2); max-width: 52ch; }
+.tech-item .stat-pill { margin-top: 1rem; font-family: var(--mono); font-size: .75rem; color: var(--ink); }
+.tech-item .stat-pill::before { content: "→ "; color: var(--accent); }
+
+/* milestones */
+.timeline { border-top: 1px solid var(--rule-strong); }
+.mile { display: grid; gap: .5rem 3rem; padding: 2rem 0; border-bottom: 1px solid var(--rule); }
+@media (min-width: 860px) { .mile { grid-template-columns: 10rem minmax(0, 1fr); } }
+.mile-year { font-family: var(--heading); font-size: clamp(2.2rem, 4vw, 3.2rem); line-height: 1; color: var(--accent); font-variant-numeric: tabular-nums; }
+.mile-date { font-family: var(--mono); font-size: .72rem; color: var(--ink-3); margin-top: .4rem; }
+.mile h3 { font-family: var(--heading); font-size: 1.6rem; line-height: 1.12; max-width: 30ch; }
+.mile .where { font-size: .85rem; color: var(--ink-3); margin-top: .35rem; }
+.mile p { margin-top: .9rem; max-width: 62ch; font-size: .95rem; }
+.mile .impact { color: var(--ink-2); }
+.mile .impact b { font-weight: 600; color: var(--ink); }
+
+/* Abbottabad */
+.issue { display: grid; gap: 1rem 3rem; padding: 1.75rem 0; border-bottom: 1px solid var(--rule); }
+@media (min-width: 860px) { .issue { grid-template-columns: 1fr 1fr 1fr; } }
+.issue h3 { font-family: var(--heading); font-size: 1.5rem; line-height: 1.15; }
+.issue dt { font-family: var(--mono); font-size: .7rem; color: var(--ink-3); letter-spacing: .03em; margin-bottom: .25rem; }
+.issue dd { font-size: .93rem; color: var(--ink); }
+.issue dd.fixd { color: var(--ink); }
+.issue .fix-dt { color: var(--accent); }
+
+/* quiz */
+.quiz-layout { display: grid; gap: 3rem; }
+@media (min-width: 1000px) { .quiz-layout { grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 5rem; align-items: start; } .sticky { position: sticky; top: 5.5rem; } }
+.progress { height: 2px; background: var(--rule); margin-top: 1rem; }
+.progress i { display: block; height: 100%; background: var(--accent); transition: width .4s var(--ease); }
+.q { padding: 2rem 0; border-bottom: 1px solid var(--rule); }
+.q h3 { font-family: var(--heading); font-size: 1.45rem; line-height: 1.22; max-width: 40ch; }
+.q h3 span { font-family: var(--mono); font-size: .75rem; color: var(--accent); margin-right: .75rem; vertical-align: .15em; }
+.opts { margin-top: 1.1rem; display: grid; gap: .5rem; }
+.opt {
+  display: grid; grid-template-columns: 1.6rem 1fr auto; gap: .6rem; align-items: start;
+  padding: .8rem 1rem; border: 1px solid var(--rule); border-radius: var(--r-md); font-size: .93rem;
+  transition: border-color .2s, background .2s, transform .15s var(--ease);
+}
+.opt b { font-family: var(--mono); font-weight: 500; font-size: .75rem; color: var(--ink-3); padding-top: .2rem; }
+.opt:hover:not(:disabled) { border-color: var(--ink); background: var(--paper-2); }
+.opt:active:not(:disabled) { transform: scale(.995); }
+.opt[aria-pressed="true"] { border-color: var(--ink); background: var(--paper-2); }
+.opt[aria-pressed="true"] b { color: var(--accent); }
+.opt:disabled { cursor: default; }
+.opt.right { border-color: var(--good); background: color-mix(in srgb, var(--good) 10%, var(--paper)); }
+.opt.wrong { border-color: var(--bad); background: color-mix(in srgb, var(--bad) 8%, var(--paper)); }
+.opt.dim { color: var(--ink-3); }
+.opt .mark { font-family: var(--mono); font-size: .7rem; padding-top: .2rem; }
+.opt.right .mark { color: var(--good); }
+.opt.wrong .mark { color: var(--bad); }
+.why { margin-top: 1rem; font-size: .9rem; color: var(--ink-2); padding-left: 1rem; border-left: 2px solid var(--accent); max-width: 62ch; }
+.why b { color: var(--ink); font-weight: 600; }
+.quiz-actions { padding-top: 2rem; display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; align-items: center; }
+.score-big { font-family: var(--heading); font-size: 3rem; line-height: 1; }
+.board { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: .9rem; }
+.board th { text-align: left; font-family: var(--mono); font-weight: 400; font-size: .7rem; color: var(--ink-3); padding: .5rem 0; border-bottom: 1px solid var(--rule-strong); }
+.board td { padding: .7rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+.board td:first-child { font-family: var(--mono); font-size: .75rem; color: var(--ink-3); width: 2rem; }
+.board td:last-child, .board th:last-child { text-align: right; font-family: var(--mono); }
+.board small { display: block; color: var(--ink-3); font-size: .78rem; }
+
+/* forms */
+.field { display: grid; gap: .35rem; }
+.field label, .legend { font-family: var(--mono); font-size: .72rem; color: var(--ink-2); letter-spacing: .02em; }
+.input, .select, .textarea {
+  width: 100%; padding: .7rem .8rem; background: var(--paper); border: 1px solid var(--ink-3); border-radius: var(--r-sm);
+  font: inherit; font-size: .95rem; color: var(--ink);
+  transition: border-color .2s, box-shadow .2s;
+}
+.textarea { resize: vertical; min-height: 5.5rem; }
+.input:hover, .select:hover, .textarea:hover { border-color: var(--ink); }
+.input:focus-visible, .select:focus-visible, .textarea:focus-visible { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent); }
+.input:user-invalid, .textarea:user-invalid { border-color: var(--bad); }
+.form-grid { display: grid; gap: 1.1rem; }
+.form-grid.two { grid-template-columns: 1fr; }
+@media (min-width: 560px) { .form-grid.two { grid-template-columns: 1fr 1fr; } }
+
+.check {
+  display: grid; grid-template-columns: 1.25rem 1fr; gap: .9rem; padding: 1rem 0; border-bottom: 1px solid var(--rule); cursor: pointer;
+}
+.check input { margin-top: .25rem; width: 1.1rem; height: 1.1rem; accent-color: var(--accent); }
+.check span { display: block; }
+.check small { display: block; font-family: var(--mono); font-size: .72rem; color: var(--ink-3); margin-top: .15rem; }
+
+.certificate {
+  position: relative; padding: 2.5rem 2.25rem; background: var(--paper-2);
+  outline: 1px solid color-mix(in srgb, var(--accent) 55%, transparent); outline-offset: -.6rem; border-radius: var(--r-lg);
+  border: 1px solid var(--rule);
+}
+.certificate .cert-name { font-family: var(--heading); font-size: clamp(2rem, 3.4vw, 2.7rem); line-height: 1.05; margin-top: 1rem; overflow-wrap: anywhere; }
+.certificate .cert-org { margin-top: .4rem; color: var(--ink-2); font-size: .9rem; }
+.certificate .cert-body { margin-top: 1.25rem; font-size: .93rem; max-width: 40ch; }
+.certificate .cert-co2 { margin-top: 1.75rem; padding-top: 1rem; border-top: 1px solid var(--ink); display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+.certificate .cert-co2 strong { font-family: var(--heading); font-weight: 400; font-size: 2.2rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.plain-list li { display: flex; justify-content: space-between; gap: 1rem; padding: .65rem 0; border-bottom: 1px solid var(--rule); font-size: .9rem; }
+.plain-list li span:last-child { font-family: var(--mono); font-size: .78rem; color: var(--ink-2); white-space: nowrap; }
+
+/* community */
+.proposal { padding: 1.75rem 0; border-bottom: 1px solid var(--rule); }
+.proposal-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem; align-items: baseline; }
+.proposal h3 { font-family: var(--heading); font-size: 1.55rem; line-height: 1.15; margin-top: .5rem; max-width: 34ch; }
+.proposal .by { font-size: .82rem; color: var(--ink-3); margin-top: .35rem; }
+.proposal dl { display: grid; gap: 1rem 2rem; margin-top: 1.1rem; }
+@media (min-width: 720px) { .proposal dl { grid-template-columns: 1fr 1fr; } }
+.proposal dt { font-family: var(--mono); font-size: .7rem; color: var(--ink-3); margin-bottom: .2rem; }
+.proposal dd { font-size: .92rem; }
+.endorse {
+  font-family: var(--mono); font-size: .75rem; padding: .35rem .8rem; border: 1px solid var(--ink); border-radius: 999px;
+  transition: background .2s, color .2s, transform .15s var(--ease);
+}
+.endorse:hover { background: var(--ink); color: var(--paper); }
+.endorse:active { transform: scale(.97); }
+.empty { padding: 2.5rem 0; color: var(--ink-2); border-bottom: 1px solid var(--rule); }
+
+/* research */
+.ref { padding: 1.75rem 0; border-bottom: 1px solid var(--rule); display: grid; gap: .5rem 3rem; }
+@media (min-width: 860px) { .ref { grid-template-columns: 8rem minmax(0, 1fr); } }
+.ref-n { font-family: var(--mono); font-size: .75rem; color: var(--accent); }
+.ref-year { font-family: var(--heading); font-size: 2rem; line-height: 1; margin-top: .25rem; }
+.ref h3 { font-family: var(--heading); font-size: 1.45rem; line-height: 1.2; max-width: 48ch; }
+.ref .meta { margin-top: .5rem; font-size: .88rem; color: var(--ink-2); }
+.ref .abs { margin-top: .9rem; max-width: 62ch; font-size: .93rem; }
+.ref .doi { margin-top: .75rem; font-family: var(--mono); font-size: .75rem; color: var(--ink-3); overflow-wrap: anywhere; }
+
+/* about */
+.facts-dl { display: grid; border-top: 1px solid var(--rule-strong); }
+.facts-dl div { display: grid; gap: .1rem .5rem; padding: .85rem 0; border-bottom: 1px solid var(--rule); }
+@media (min-width: 560px) { .facts-dl div { grid-template-columns: 11rem 1fr; } }
+.facts-dl dt { font-family: var(--mono); font-size: .72rem; color: var(--ink-3); padding-top: .2rem; }
+.facts-dl dd { font-size: .95rem; }
+
+/* footer */
+.site-footer { background: var(--paper-2); border-top: 1px solid var(--rule); padding-block: 3rem 2.5rem; }
+.footer-grid { display: grid; gap: 2.5rem; }
+@media (min-width: 860px) { .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; gap: 5rem; } }
+.site-footer h4 { font-family: var(--mono); font-weight: 400; font-size: .72rem; color: var(--ink-3); margin-bottom: .75rem; }
+.site-footer li + li { margin-top: .35rem; }
+.site-footer li button { font-size: .92rem; color: var(--ink-2); transition: color .2s; }
+.site-footer li button:hover { color: var(--accent); }
+.footer-base { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 2rem; font-size: .8rem; color: var(--ink-3); }
+
+/* index overlay */
+dialog.index {
+  width: min(960px, calc(100% - 2rem)); max-height: calc(100dvh - 3rem); padding: 0;
+  background: var(--paper); color: var(--ink); border: 1px solid var(--ink); border-radius: var(--r-lg);
+  box-shadow: 0 30px 60px -20px rgba(15, 36, 24, .30);
+}
+dialog.index::backdrop { background: rgba(15, 36, 24, .45); backdrop-filter: blur(3px); }
+.index-head { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; border-bottom: 1px solid var(--rule); position: sticky; top: 0; background: var(--paper); z-index: 1; }
+.index-body { padding: 0 1.5rem 1.5rem; display: grid; gap: 0 3rem; }
+@media (min-width: 780px) { .index-body { grid-template-columns: 1fr 1fr; } }
+.index-body h3 { font-family: var(--mono); font-weight: 400; font-size: .72rem; color: var(--ink-3); padding: 1.5rem 0 .25rem; }
+.index-body .row { grid-template-columns: 2rem 1fr; padding: .6rem 0; }
+.index-body .row-title { font-size: 1.2rem; }
+.close-btn { font-family: var(--mono); font-size: .75rem; padding: .3rem .6rem; border: 1px solid var(--ink-3); border-radius: var(--r-sm); transition: background .2s, color .2s; }
+.close-btn:hover { background: var(--ink); color: var(--paper); }
+
+/* toast */
+.toast {
+  position: fixed; left: 50%; bottom: 1.5rem; z-index: var(--z-toast);
+  transform: translate(-50%, 1rem); opacity: 0; pointer-events: none;
+  background: var(--ink); color: var(--paper); padding: .8rem 1.1rem; border-radius: var(--r-sm); max-width: min(92vw, 28rem); border-radius: 999px; padding-inline: 1.4rem;
+  font-size: .9rem; transition: opacity .25s var(--ease), transform .25s var(--ease);
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+.toast.error { background: var(--bad); }
+.toast b { font-weight: 600; margin-right: .4rem; }
+
+/* =====================  V4: forest frame, photographic  ===================== */
+main { padding: 0; }
+.view { animation: none; }
+.view > * + * { margin-top: 0; }
+.band { padding-block: clamp(4.5rem, 9vw, 8.5rem); }
+.band > .wrap > * + * { margin-top: clamp(3.5rem, 7vw, 6rem); }
+.band.tint { background: var(--paper-2); }
+.band.dark { background: var(--forest); color: var(--cream); }
+.band.pull-up { padding-top: 0; }
+
+h1, h2, h3, .row-title, .fact-n, .stat-v, .mile-year, .ref-year, .score-big, .cert-name, .brand-name, .display, .h1, .h2, .h3, .pager span {
+  font-weight: 700; letter-spacing: -0.035em;
+}
+.display { font-size: clamp(2.8rem, 7.4vw, 7rem); line-height: .96; letter-spacing: -0.045em; font-weight: 800; }
+.display em { font-style: normal; color: var(--lime); }
+.h1 { font-size: clamp(2.5rem, 6vw, 5.2rem); line-height: .98; letter-spacing: -0.04em; font-weight: 800; }
+.h2 { font-size: clamp(1.9rem, 3.6vw, 3rem); line-height: 1.02; }
+.h3 { font-size: 1.55rem; line-height: 1.1; }
+
+/* header on forest */
+.site-header { background: color-mix(in srgb, var(--forest) 92%, transparent); border-bottom: 1px solid rgba(185, 228, 138, .14); color: var(--cream); }
+.brand { align-items: center; gap: .7rem; }
+.brand-mark { width: 1.9rem; height: 1.9rem; }
+.brand-name { font-size: 1.25rem; white-space: nowrap; }
+.brand-sub { color: #8fb09a; }
+.nav button { color: #b6cbbc; }
+.nav button:hover, .nav button.active { color: var(--cream); }
+.nav button::after { background: var(--lime); }
+.index-btn { border-color: rgba(185, 228, 138, .5); color: var(--cream); }
+.index-btn:hover { background: var(--lime); color: var(--forest); border-color: var(--lime); }
+.skip { background: var(--lime); color: var(--forest); }
+
+.btn-lime { background: var(--lime); color: var(--forest); }
+.btn-lime:hover { background: #cdf0a3; }
+.btn-line { background: transparent; color: var(--cream); border: 1px solid rgba(241, 245, 233, .45); }
+.btn-line:hover { background: var(--cream); color: var(--forest); }
+.on-dark .link { color: var(--cream); }
+.on-dark .link:hover { color: var(--lime); }
+
+/* ---------- home hero ---------- */
+.hero-full {
+  position: relative; isolation: isolate; color: var(--cream);
+  min-height: calc(100svh - 4rem); display: flex; align-items: flex-end;
+  padding-block: 4rem 6.5rem; border-radius: 0 0 var(--r-xl) var(--r-xl); overflow: hidden; background: var(--forest);
+}
+.hero-full .bg { position: absolute; inset: 0; z-index: -2; }
+.hero-full .bg img { width: 100%; height: 100%; object-fit: cover; animation: drift 24s ease-in-out infinite alternate; }
+@keyframes drift { from { transform: scale(1.04); } to { transform: scale(1.12) translate(-1.5%, -1%); } }
+.hero-full::after { content: ""; position: absolute; inset: 0; z-index: -1; background:
+  linear-gradient(to top, rgba(10, 35, 24, .96) 6%, rgba(10, 35, 24, .55) 48%, rgba(10, 35, 24, .25) 100%),
+  radial-gradient(ellipse 70% 60% at 20% 90%, rgba(10, 35, 24, .6), transparent); }
+.hero-full .chip { display: inline-flex; align-items: center; gap: .55rem; padding: .4rem .9rem; border-radius: 999px; background: rgba(241, 245, 233, .12); backdrop-filter: blur(10px); border: 1px solid rgba(241, 245, 233, .22); font-size: .8rem; }
+.hero-full .chip i { width: .5rem; height: .5rem; border-radius: 50%; background: var(--lime); }
+.hero-full .lede { color: #cfe0d3; }
+.hero-full h1 { max-width: 15ch; margin-top: 1.25rem; }
+.hero-grid { display: grid; gap: 2.5rem; align-items: end; }
+.hero-grid .side { display: grid; gap: 1.25rem; }
+@media (min-width: 960px) { .hero-grid { grid-template-columns: minmax(0, 1fr) 24rem; gap: 4rem; } }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-top: 2rem; }
+
+.facts-float { position: relative; z-index: 2; margin-top: -4rem; display: grid; gap: 1rem; }
+@media (min-width: 760px) { .facts-float { grid-template-columns: repeat(3, 1fr); } }
+.facts-float .fact { border: 0; padding: 1.75rem 1.75rem 1.6rem; background: #f7faf0; border-radius: var(--r-lg); box-shadow: 0 24px 50px -28px rgba(10, 35, 24, .55); }
+.facts-float .fact + .fact { border-left: 0; padding-left: 1.75rem; }
+.facts-float .fact-n { color: var(--accent); font-size: clamp(2.8rem, 4.6vw, 4rem); }
+.facts-float .fact-l { color: var(--ink-2); }
+
+/* topic tiles */
+.tiles { display: grid; gap: 1rem; grid-auto-rows: 17rem; }
+@media (min-width: 640px) { .tiles { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1020px) {
+  .tiles { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 15rem; }
+  .tile:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+  .tile:nth-child(4) { grid-column: span 2; }
+}
+.tile {
+  position: relative; isolation: isolate; overflow: hidden; border-radius: var(--r-lg); color: var(--cream);
+  display: flex; flex-direction: column; justify-content: space-between; padding: 1.4rem; background: var(--forest-2);
+  transition: transform .5s var(--ease), box-shadow .5s var(--ease);
+}
+.tile img { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; transition: transform .9s var(--ease); }
+.tile::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgba(10, 35, 24, .92), rgba(10, 35, 24, .15) 65%, rgba(10, 35, 24, .35)); }
+.tile:hover { transform: translateY(-4px); box-shadow: 0 30px 50px -30px rgba(10, 35, 24, .7); }
+.tile:hover img { transform: scale(1.07); }
+.tile .n { align-self: flex-start; font-size: .75rem; padding: .25rem .7rem; border-radius: 999px; background: rgba(241, 245, 233, .16); backdrop-filter: blur(8px); border: 1px solid rgba(241, 245, 233, .25); }
+.tile h3 { font-size: clamp(1.4rem, 2vw, 1.8rem); line-height: 1; }
+.tile:nth-child(1) h3 { font-size: clamp(2rem, 3.4vw, 3rem); }
+.tile p { margin-top: .5rem; font-size: .85rem; color: #cfe0d3; max-width: 34ch; }
+.tile .go { position: absolute; right: 1.2rem; top: 1.2rem; width: 2.4rem; height: 2.4rem; border-radius: 50%; background: var(--lime); color: var(--forest); display: grid; place-items: center; transition: transform .35s var(--ease); }
+.tile:hover .go { transform: rotate(-45deg) scale(1.05); }
+
+/* marquee */
+.marquee { overflow: hidden; background: var(--forest); color: var(--cream); padding-block: 1.6rem; mask-image: none; }
+.marquee-track { display: flex; width: max-content; animation: slide 38s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee span { font-family: var(--heading); font-weight: 700; font-size: clamp(1.8rem, 4vw, 3.2rem); letter-spacing: -.035em; padding-inline: 1.4rem; white-space: nowrap; }
+.marquee span:nth-child(even) { color: var(--lime); }
+@keyframes slide { to { transform: translateX(-50%); } }
+
+/* numbers band */
+.bignums { display: grid; gap: 2.5rem 3rem; }
+@media (min-width: 860px) { .bignums { grid-template-columns: 1.1fr 1fr; align-items: start; } }
+.bignums .nums { display: grid; gap: 0; }
+.bignums .num { display: grid; grid-template-columns: minmax(8rem, 12rem) 1fr; gap: 1.5rem; align-items: baseline; padding: 1.4rem 0; border-top: 1px solid rgba(241, 245, 233, .18); }
+.bignums .num b { font-family: var(--heading); font-weight: 800; font-size: clamp(2.6rem, 5vw, 4.4rem); letter-spacing: -.045em; line-height: 1; color: var(--lime); }
+.bignums .num span { color: #c1d4c6; font-size: .95rem; max-width: 36ch; }
+
+/* contents panels */
+.panels { display: grid; gap: 1rem; }
+@media (min-width: 900px) { .panels { grid-template-columns: repeat(3, 1fr); } }
+.panel { background: #f7faf0; border-radius: var(--r-lg); padding: 1.6rem 1.6rem .8rem; }
+.panel h3 { font-size: .8rem; font-family: var(--sans); font-weight: 500; letter-spacing: .02em; color: var(--accent); margin-bottom: .5rem; }
+.panel .row { grid-template-columns: 1fr auto; padding: .85rem 0; }
+.panel .row-num { display: none; }
+.panel .row-title { font-size: 1.25rem; }
+
+/* ---------- inner page top ---------- */
+.page-top {
+  position: relative; isolation: isolate; overflow: hidden; background: var(--forest); color: var(--cream);
+  padding-block: clamp(3.5rem, 8vw, 7rem) clamp(4.5rem, 9vw, 8rem); border-radius: 0 0 var(--r-xl) var(--r-xl);
+}
+.page-top::before { content: ""; position: absolute; z-index: -1; inset: auto -10% -60% auto; width: 60%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(111, 186, 120, .32), transparent 65%); }
+.page-top .ghost { position: absolute; z-index: -1; right: var(--gutter); top: 50%; transform: translateY(-50%); font-family: var(--heading); font-weight: 800; font-size: clamp(8rem, 24vw, 20rem); line-height: .8; letter-spacing: -.06em; color: transparent; -webkit-text-stroke: 1.5px rgba(185, 228, 138, .22); user-select: none; }
+.page-top .eyebrow { color: #a5c4ae; }
+.page-top .eyebrow b { color: var(--lime); }
+.page-top h1 { margin-top: 1.25rem; max-width: 16ch; }
+.page-top .lede { margin-top: 1.5rem; color: #c8dbcd; }
+.page-top .progress { background: rgba(241, 245, 233, .18); max-width: 34rem; }
+.page-top .progress i { background: var(--lime); }
+.page-top .small { color: #a5c4ae; margin-top: .6rem; }
+
+/* topic hero */
+.topic-hero { position: relative; isolation: isolate; overflow: hidden; color: var(--cream); border-radius: 0 0 var(--r-xl) var(--r-xl); min-height: min(78svh, 46rem); display: flex; align-items: flex-end; padding-block: 4rem 7.5rem; background: var(--forest); }
+.topic-hero .bg { position: absolute; inset: 0; z-index: -2; }
+.topic-hero .bg img { width: 100%; height: 100%; object-fit: cover; }
+.topic-hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgba(10, 35, 24, .95) 8%, rgba(10, 35, 24, .5) 55%, rgba(10, 35, 24, .3)); }
+.topic-hero .eyebrow { color: #cfe0d3; }
+.topic-hero .eyebrow b { color: var(--lime); }
+.topic-hero h1 { margin-top: 1.2rem; max-width: 14ch; }
+.topic-hero .lede { margin-top: 1.4rem; color: #d3e2d6; }
+.stats-float { position: relative; z-index: 2; margin-top: -4rem; display: grid; gap: 1rem; border: 0; }
+@media (min-width: 800px) { .stats-float { grid-template-columns: repeat(3, 1fr); } }
+.stats-float .stat { background: #f7faf0; border-radius: var(--r-lg); padding: 1.6rem 1.75rem; border: 0; box-shadow: 0 24px 50px -28px rgba(10, 35, 24, .55); }
+.stats-float .stat + .stat { border-left: 0; padding-left: 1.75rem; }
+.stats-float .stat-v { color: var(--accent); font-weight: 800; }
+
+.panel-dark, .panel-leaf { border-radius: var(--r-lg); padding: clamp(1.75rem, 3vw, 2.75rem); }
+.panel-dark { background: var(--forest); color: var(--cream); }
+.panel-leaf { background: #dbe8c8; }
+.panel-dark .numbered, .panel-leaf .numbered { border-top-color: rgba(128, 160, 140, .45); }
+.panel-dark .numbered li { border-bottom-color: rgba(241, 245, 233, .16); color: #e3eedd; }
+.panel-dark .numbered li::before { color: var(--lime); }
+.panel-leaf .numbered li { border-bottom-color: rgba(15, 36, 24, .15); }
+.panel-leaf .numbered li::before { color: var(--accent-deep); }
+.panel-dark .tag, .panel-dark .eyebrow { color: var(--lime); }
+
+/* cards on sage */
+.ruled-item, .mile, .issue, .ref, .tech-item { border-bottom-color: var(--rule); }
+.opt, .board, .input, .select, .textarea { background: #f7faf0; }
+.aside-fig img, .banner { border-radius: var(--r-lg); }
+.endorse:hover { background: var(--forest); }
+.certificate { background: #f7faf0; }
+.row:hover .row-title { color: var(--accent); }
+
+/* footer on forest */
+.site-footer { background: var(--forest); color: var(--cream); border-top: 0; border-radius: var(--r-xl) var(--r-xl) 0 0; margin-top: -2.75rem; position: relative; padding-block: 5rem 2.5rem; }
+.site-footer h4 { color: #8fb09a; }
+.site-footer li button { color: #c1d4c6; }
+.site-footer li button:hover { color: var(--lime); }
+.site-footer .small, .footer-base { color: #9fbba9; }
+.footer-base { border-top-color: rgba(241, 245, 233, .14); }
+.footer-cta { font-family: var(--heading); font-weight: 800; font-size: clamp(2.2rem, 5vw, 4.2rem); letter-spacing: -.04em; line-height: 1; margin-bottom: 3.5rem; max-width: 18ch; }
+.footer-cta em { font-style: normal; color: var(--lime); }
+main + .site-footer { }
+.band.last { padding-bottom: calc(clamp(4.5rem, 9vw, 8.5rem) + 2.75rem); }
+
+
+/* =====================  V5: photographic, calm, light  ===================== */
+body.photo-top .site-header { position: fixed; inset: 0 0 auto 0; background: transparent; border-bottom-color: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; transition: background .35s var(--ease), border-color .35s; }
+body.photo-top .site-header.scrolled { background: color-mix(in srgb, var(--forest) 92%, transparent); border-bottom-color: rgba(185, 228, 138, .14); backdrop-filter: blur(10px); }
+
+/* home hero: one huge word, tagline bottom-left, photo strip cut off at the edge */
+.hero-full { min-height: 100svh; padding: 0; flex-direction: column; align-items: stretch; justify-content: space-between; border-radius: 0 0 var(--r-xl) var(--r-xl); }
+.hero-full::after { background: linear-gradient(to bottom, rgba(10, 35, 24, .55), rgba(10, 35, 24, .1) 35%, rgba(10, 35, 24, .35) 65%, rgba(10, 35, 24, .9)); }
+.hero-word { flex: 1; display: grid; place-items: center; padding-top: 5rem; }
+.hero-word h1 { font-family: var(--heading); font-weight: 800; text-transform: uppercase; letter-spacing: -.05em; line-height: .86; font-size: clamp(3rem, 13vw, 13.5rem); white-space: nowrap; text-align: center; color: var(--cream); margin: 0; max-width: none; text-shadow: 0 6px 40px rgba(10, 35, 24, .35); }
+.hero-word h1 span { display: block; }
+.hero-word h1 span + span { color: var(--lime); }
+.hero-lower { display: grid; gap: 1.5rem; padding-bottom: 1.75rem; }
+@media (min-width: 900px) { .hero-lower { grid-template-columns: minmax(0, 1fr) auto; align-items: end; } }
+.hero-lower p { max-width: 32ch; font-size: clamp(1.1rem, 1.7vw, 1.45rem); font-weight: 300; line-height: 1.35; color: var(--cream); }
+.btn-mint { background: #bfe8b4; color: var(--forest); }
+.btn-mint:hover { background: #d6f2cd; }
+.strip-wrap { position: relative; margin-bottom: -3.2rem; }
+.strip { display: flex; gap: .9rem; padding-inline: var(--gutter); overflow: hidden; }
+.strip .card { flex: 0 0 clamp(13rem, 22vw, 19rem); aspect-ratio: 16 / 11; border-radius: 22px; overflow: hidden; position: relative; isolation: isolate; color: var(--cream); display: flex; align-items: flex-end; padding: .9rem 1rem; background: var(--forest-2); transition: transform .5s var(--ease); }
+.strip .card:hover { transform: translateY(-6px); }
+.strip .card img { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; }
+.strip .card::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgba(10, 35, 24, .75), transparent 60%); }
+.strip .card span { font-weight: 500; font-size: .9rem; }
+.seal { position: absolute; right: clamp(1rem, 5vw, 5rem); top: -1rem; width: 7rem; height: 7rem; z-index: 3; }
+.seal svg { width: 100%; height: 100%; animation: spin 22s linear infinite; }
+.seal .core { position: absolute; inset: 1.65rem; border-radius: 50%; background: var(--lime); display: grid; place-items: center; color: var(--forest); }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.facts-float { margin-top: 5.5rem; }
+
+/* inner page top: calm sage, forest type */
+.page-top { background: var(--paper-2); color: var(--ink); padding-block: clamp(3rem, 7vw, 6rem) clamp(4rem, 8vw, 7rem); }
+.page-top::before { background: radial-gradient(circle, rgba(88, 160, 105, .22), transparent 65%); }
+.page-top .ghost { -webkit-text-stroke: 1.5px rgba(44, 122, 75, .3); }
+.page-top .eyebrow { color: var(--ink-2); }
+.page-top .eyebrow b { color: var(--accent); }
+.page-top .lede { color: var(--ink-2); }
+.page-top .progress { background: rgba(15, 36, 24, .15); }
+.page-top .progress i { background: var(--accent); }
+.page-top .small { color: var(--ink-2); }
+.page-top h1 { color: var(--forest); }
+
+/* topic hero: title bottom-left, plainer */
+.topic-hero { min-height: 92svh; padding-block: 6rem 8rem; }
+.topic-hero h1 { font-size: clamp(2.8rem, 8vw, 7.5rem); max-width: 12ch; line-height: .92; }
+
+
+@media (max-width: 639px) { .seal { width: 5rem; height: 5rem; top: -.6rem; } .seal .core { inset: 1.15rem; } }
+/* navbar hardening */
+.header-row { min-width: 0; }
+.brand, .index-btn { flex-shrink: 0; }
+.nav { min-width: 0; margin-inline: auto; }
+.nav button { white-space: nowrap; }
+.index-btn { white-space: nowrap; }
+/* =====================  V6: Modak headings  ===================== */
+h1, h2, h3, .display, .h1, .h2, .h3, .row-title, .fact-n, .stat-v, .mile-year, .ref-year, .score-big, .cert-name, .brand-name,
+.pager span, .hero-word h1, .marquee span, .footer-cta, .page-top .ghost, .bignums .num b, .tile h3, .proposal h3, .q h3,
+.ruled-item h3, .mile h3, .issue h3, .ref h3, .panel .row-title {
+  font-family: var(--heading); font-weight: 400 !important; letter-spacing: 0 !important; font-synthesis: none; text-wrap: balance;
+}
+.display, .h1, .topic-hero h1, .page-top h1 { line-height: 1.02; }
+.h2, .h3, .tile h3, .row-title, .mile h3, .issue h3, .ref h3, .proposal h3, .q h3, .ruled-item h3 { line-height: 1.08; }
+.h1 { font-size: clamp(2.6rem, 6.2vw, 5.4rem); }
+.h2 { font-size: clamp(2rem, 3.8vw, 3.2rem); }
+.hero-word h1 { font-size: clamp(3rem, 12.5vw, 13rem); line-height: .92; padding-top: .1em; }
+.topic-hero h1 { font-size: clamp(2.8rem, 7.4vw, 7rem); max-width: 13ch; }
+.brand-name { font-size: 1.4rem; line-height: 1; padding-top: .12em; white-space: nowrap !important; }
+.row-title { font-size: 1.5rem; }
+.fact-n, .stat-v { line-height: 1.05; }
+.q h3 { font-size: 1.45rem; }
+.mile-year { font-size: clamp(2.6rem, 4.4vw, 3.6rem); }
+.page-top .ghost { -webkit-text-stroke-width: 1.5px; }
+.pager span { font-size: 1.5rem; }
+.footer-cta { font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.05; }
+.marquee span { font-size: clamp(2rem, 4.4vw, 3.6rem); }
+
+/* =====================  V7: motion  ===================== */
+#scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 60; background: var(--lime); transform: scaleX(0); transform-origin: 0 50%; pointer-events: none; }
+.view { animation: viewIn .5s var(--ease) both; }
+@keyframes viewIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* scroll reveal */
+.motion .reveal { opacity: 0; translate: 0 34px; transition: opacity .9s var(--ease) var(--d, 0s), translate .9s var(--ease) var(--d, 0s), transform .5s var(--ease), box-shadow .5s var(--ease), background .2s, color .2s; }
+.motion .reveal.in { opacity: 1; translate: 0 0; }
+.motion .aside-fig.reveal img, .motion .banner.reveal img { clip-path: inset(0 0 100% 0 round 28px); transition: clip-path 1.3s var(--ease) calc(var(--d, 0s) + .1s); }
+.motion .aside-fig.reveal.in img, .motion .banner.reveal.in img { clip-path: inset(0 0 0 0 round 28px); }
+
+/* hero entrance */
+.hero-word h1 .ch { display: inline-block; font-style: normal; animation: chIn 1.1s var(--ease) backwards; animation-delay: calc(var(--i) * 48ms + .15s); }
+@keyframes chIn { from { opacity: 0; transform: translateY(55%) scale(.85) rotate(4deg); } }
+.hero-lower > * { animation: rise .9s var(--ease) backwards; animation-delay: 1s; }
+.hero-lower > *:nth-child(2) { animation-delay: 1.12s; }
+.strip .card { animation: cardIn .9s var(--ease) backwards; animation-delay: calc(1.1s + var(--i) * 70ms); }
+@keyframes cardIn { from { opacity: 0; translate: 90px 0; } }
+.seal { animation: pop .9s var(--ease) 1.5s backwards; }
+@keyframes pop { from { opacity: 0; scale: .3; } }
+body.photo-top .site-header { animation: fadeDown .8s var(--ease) .2s backwards; }
+@keyframes fadeDown { from { opacity: 0; translate: 0 -100%; } }
+.topic-hero .wrap > *, .page-top .wrap > * { animation: rise .9s var(--ease) backwards; }
+.topic-hero .wrap > *:nth-child(2), .page-top .wrap > *:nth-child(2) { animation-delay: .1s; }
+.topic-hero .wrap > *:nth-child(3), .page-top .wrap > *:nth-child(3) { animation-delay: .22s; }
+.page-top .wrap > *:nth-child(n+4) { animation-delay: .32s; }
+.hero-full .bg img { animation: drift 26s ease-in-out infinite alternate; }
+.topic-hero .bg img { animation: drift 26s ease-in-out infinite alternate; }
+
+/* parallax containers */
+.hero-full .bg, .topic-hero .bg { inset: -12% 0; will-change: translate; }
+.tile img { inset: auto; left: 0; top: -10%; width: 100%; height: 120%; will-change: translate; }
+.hero-word h1, .page-top .ghost, .seal { will-change: translate, opacity; }
+.page-top .ghost { translate: 0 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .motion .reveal { opacity: 1 !important; translate: none !important; }
+  .motion .aside-fig.reveal img { clip-path: none !important; }
+  #scroll-progress { display: none; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#app">Skip to content</a>
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<dialog id="index-dialog" class="index" aria-labelledby="index-title">
+  <div class="index-head">
+    <h2 id="index-title" class="h3">Contents</h2>
+    <button class="close-btn" onclick="closeIndex()" aria-label="Close contents">Close · Esc</button>
+  </div>
+  <div id="index-body" class="index-body"></div>
+</dialog>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <button class="brand" onclick="navigateTo('home')" aria-label="EcoSphere Nexus, home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="10" fill="#b9e48a"/><path d="M9 22c0-8 5-12 14-12 0 8-4 13-12 13M9 22c3-4 6-6 10-8" fill="none" stroke="#0a2318" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="brand-name">EcoSphere Nexus</span>
+      <span class="brand-sub">COMSATS Abbottabad · EPS 2026</span>
+    </button>
+    <nav class="nav" aria-label="Primary">
+      <button data-nav="abbottabad" onclick="navigateTo('abbottabad')">Abbottabad</button>
+      <button data-nav="milestones" onclick="navigateTo('milestones')">Milestones</button>
+      <button data-nav="innovations" onclick="navigateTo('innovations')">Technology</button>
+      <button data-nav="quiz" onclick="navigateTo('quiz')">Quiz</button>
+      <button data-nav="pledge" onclick="navigateTo('pledge')">Pledge</button>
+      <button data-nav="community" onclick="navigateTo('community')">Proposals</button>
+      <button data-nav="about" onclick="navigateTo('about')">About</button>
+    </nav>
+    <button class="index-btn" onclick="openIndex()" aria-haspopup="dialog">Contents <kbd>⌘K</kbd></button>
+  </div>
+</header>
+
+<main id="app" tabindex="-1">
+  <div id="app-viewport"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-cta">Know it. Then <em>do</em> something about it.</p>
+    <div class="footer-grid">
+      <div>
+        <p class="h3">EcoSphere Nexus</p>
+        <p class="small" style="margin-top:.75rem;max-width:44ch">A reference and action site on environmental sustainability, built for the Environmental Protection Society website competition, Students' Week Fall 2026.</p>
+        <p class="small" style="margin-top:1.25rem">Built by Rouman (SP26-BES-001)<br>Department of Environmental Sciences<br>COMSATS University Islamabad, Abbottabad Campus</p>
+      </div>
+      <div>
+        <h4>Topics</h4>
+        <ul>
+          <li><button onclick="navigateTo('climate')">Climate change</button></li>
+          <li><button onclick="navigateTo('biodiversity')">Biodiversity</button></li>
+          <li><button onclick="navigateTo('plastic')">Plastic and circularity</button></li>
+          <li><button onclick="navigateTo('water')">Water</button></li>
+          <li><button onclick="navigateTo('energy')">Energy</button></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Take part</h4>
+        <ul>
+          <li><button onclick="navigateTo('quiz')">Quiz and scoreboard</button></li>
+          <li><button onclick="navigateTo('pledge')">Sustainability pledge</button></li>
+          <li><button onclick="navigateTo('community')">Visitor proposals</button></li>
+          <li><button onclick="navigateTo('research')">References</button></li>
+          <li><button onclick="navigateTo('about')">About this site</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span>© 2026 EcoSphere Nexus</span>
+      <span>Quiz scores, pledges and proposals are stored in your own browser only.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+        const IMAGES = {
+            heroEarth: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
+            climate: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80",
+            glacier: "https://images.unsplash.com/photo-1516912481808-3406841bd33c?auto=format&fit=crop&w=1000&q=80",
+            biodiversity: "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1200&q=80",
+            wildlife: "https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=1000&q=80",
+            plastic: "https://images.unsplash.com/photo-1621451537084-482c73073a0f?auto=format&fit=crop&w=1200&q=80",
+            waste: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1200&q=80",
+            water: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+            watershed: "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1000&q=80",
+            energy: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80",
+            wind: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1000&q=80",
+            air: "https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?auto=format&fit=crop&w=1200&q=80",
+            sdgs: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80",
+            abbottabadHills: "https://images.unsplash.com/photo-1586348943529-beaae6c28db9?auto=format&fit=crop&w=1200&q=80",
+            comsatsCampus: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
+            pineForest: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1000&q=80",
+            innovation: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+            research: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1200&q=80"
+        };
+
+        // =========================================================================
+        // 2. COMPLETE 17-PAGE DIRECTORY METADATA
+        // =========================================================================
+        const PAGES = [
+            { id: 'home', num: '01', title: 'Home Command Center', icon: 'fa-house' },
+            { id: 'about', num: '02', title: 'About & Developer (Rouman)', icon: 'fa-user-graduate' },
+            { id: 'climate', num: '03', title: 'Climate Change & Warming', icon: 'fa-temperature-arrow-up' },
+            { id: 'biodiversity', num: '04', title: 'Biodiversity Conservation', icon: 'fa-paw' },
+            { id: 'plastic', num: '05', title: 'Plastic Pollution & Circularity', icon: 'fa-bottle-water' },
+            { id: 'waste', num: '06', title: 'Integrated Waste Management', icon: 'fa-recycle' },
+            { id: 'water', num: '07', title: 'Water Conservation & Hydrology', icon: 'fa-droplet' },
+            { id: 'energy', num: '08', title: 'Renewable Energy Transition', icon: 'fa-solar-panel' },
+            { id: 'air', num: '09', title: 'Air Quality & Atmosphere', icon: 'fa-wind' },
+            { id: 'sdgs', num: '10', title: 'UN Sustainable Dev Goals', icon: 'fa-globe' },
+            { id: 'milestones', num: '11', title: 'Collective Global Milestones', icon: 'fa-landmark' },
+            { id: 'abbottabad', num: '12', title: 'Abbottabad & COMSATS Case Study', icon: 'fa-mountain-sun' },
+            { id: 'innovations', num: '13', title: 'Green Innovations & Tech', icon: 'fa-microchip' },
+            { id: 'quiz', num: '14', title: '10-Q Quiz & Live Scoreboard', icon: 'fa-trophy' },
+            { id: 'pledge', num: '15', title: 'Eco-Pledge & Commitment', icon: 'fa-hand-holding-heart' },
+            { id: 'community', num: '16', title: 'Visitor Solutions Portfolio', icon: 'fa-comments' },
+            { id: 'research', num: '17', title: 'Research Papers & References', icon: 'fa-book-open' }
+        ];
+
+        // =========================================================================
+        // 3. DEEP SCIENTIFIC CONTENT FOR THE 7 CORE ENVIRONMENTAL THEMES
+        // =========================================================================
+        const THEME_DATA = {
+            climate: {
+                badge: "Page 03 • Atmospheric Thermodynamics & Mitigation",
+                title: "Climate Change & Global Warming",
+                subtitle: "Understanding anthropogenic radiative forcing, cryosphere retreat, and science-based decarbonization pathways aligned with the 1.5°C Paris threshold.",
+                heroImg: IMAGES.climate,
+                secondaryImg: IMAGES.glacier,
+                secondaryCaption: "Accelerated Himalayan & Karakoram glacial melt threatens downstream Indus Basin water security.",
+                metrics: [
+                    { label: "Atmospheric CO₂", value: "424.6 ppm", note: "+51% above pre-industrial baseline" },
+                    { label: "Global Mean Anomaly", value: "+1.28°C", note: "Relative to 1850-1900 average" },
+                    { label: "Ocean Heat Content", value: "+15 ZJ/yr", note: "90% of excess heat absorbed by oceans" }
+                ],
+                overview: "Anthropogenic emissions of carbon dioxide (CO₂), methane (CH₄), and nitrous oxide (N₂O) have intensified Earth's natural greenhouse effect by trapping outgoing longwave infrared radiation. According to the IPCC Sixth Assessment Report (AR6), human influence has warmed the climate at a rate unprecedented in at least the last 2,000 years, triggering compound extreme weather events including heatwaves, glacial lake outburst floods (GLOFs), and erratic monsoon cycles across South Asia.",
+                localIssues: [
+                    "Accelerated glacial melt in Northern Pakistan increasing GLOF risks in Khyber Pakhtunkhwa and Gilgit-Baltistan.",
+                    "Unpredictable monsoon rainfall patterns causing flash floods followed by prolonged agricultural droughts.",
+                    "Urban heat island amplification in rapidly expanding cities due to loss of vegetative cover."
+                ],
+                solutions: [
+                    "Rapid phase-out of unabated fossil fuels and transition to 100% clean electricity grids by 2040.",
+                    "Large-scale ecosystem restoration (mangroves, peatlands, and Himalayan coniferous forests) as natural carbon sinks.",
+                    "Implementation of carbon pricing mechanisms, climate-resilient agriculture, and early-warning GLOF telemetry."
+                ],
+                citation: "IPCC (2023). Climate Change 2023: Synthesis Report. Contribution of Working Groups I, II and III to the Sixth Assessment Report."
+            },
+            biodiversity: {
+                badge: "Page 04 • Conservation Biology & Ecosystem Integrity",
+                title: "Biodiversity & Ecosystem Conservation",
+                subtitle: "Halting the sixth mass extinction by protecting genetic, species, and ecosystem diversity under the Kunming-Montreal 30x30 Global Framework.",
+                heroImg: IMAGES.biodiversity,
+                secondaryImg: IMAGES.wildlife,
+                secondaryCaption: "Apex predators and keystone pollinators maintain trophic cascades essential for ecosystem stability.",
+                metrics: [
+                    { label: "Threatened Species", value: "1 Million+", note: "IPBES Global Assessment estimate" },
+                    { label: "30x30 Global Target", value: "30% Land/Sea", note: "Protected & conserved by 2030" },
+                    { label: "Pollinator Value", value: "$577B / yr", note: "Global agricultural crop dependence" }
+                ],
+                overview: "Biodiversity underpins every life-support system on Earth - from soil nutrient cycling and water filtration to crop pollination and carbon sequestration. Habitat fragmentation, invasive alien species, overexploitation, and climate shifts have caused a 69% average decline in monitored wildlife populations since 1970. Preserving intact ecological corridors is critical to prevent irreversible tipping points in tropical and montane ecosystems.",
+                localIssues: [
+                    "Deforestation of Himalayan moist temperate and subtropical Chir Pine forests in the Galliyat and Hazara division.",
+                    "Habitat fragmentation threatening native fauna such as the Common Leopard, Koklass Pheasant, and Himalayan Monal.",
+                    "Spread of invasive plant species (e.g., Parthenium hysterophorus) outcompeting native flora."
+                ],
+                solutions: [
+                    "Establishing connected wildlife corridors linking Ayubia National Park with surrounding reserve forests.",
+                    "Enforcing strict anti-poaching laws alongside community-led eco-tourism revenue sharing.",
+                    "Native seed banking and ecological restoration using indigenous tree species rather than monoculture plantations."
+                ],
+                citation: "IPBES (2019). Global Assessment Report on Biodiversity and Ecosystem Services. Secretariat of the IPBES, Bonn, Germany."
+            },
+            plastic: {
+                badge: "Page 05 • Polymer Science & Circular Economy",
+                title: "Plastic Pollution & Circular Economy",
+                subtitle: "Eliminating single-use synthetic polymers, mitigating microplastic trophic transfer, and redesigning materials for closed-loop regeneration.",
+                heroImg: IMAGES.plastic,
+                secondaryImg: IMAGES.waste,
+                secondaryCaption: "Transitioning from a linear 'take-make-dispose' economy to circular biological and technical loops.",
+                metrics: [
+                    { label: "Annual Production", value: "430M Tons", note: "Over 60% single-use packaging" },
+                    { label: "Global Recycling Rate", value: "Only 9%", note: "Remainder landfilled, incinerated, or leaked" },
+                    { label: "Microplastic Presence", value: "100% Oceans", note: "Detected in human blood & placentas" }
+                ],
+                overview: "Conventional petroleum-derived plastics (PET, HDPE, LDPE, PP, PS) resist microbial degradation for 400 to 1,000 years, fragmenting under UV photodegradation into microplastics (<5 mm) and nanoplastics (<1 µm). These particles adsorb persistent organic pollutants (POPs) and bioaccumulate up aquatic and terrestrial food webs. The UN Global Plastics Treaty aims to establish legally binding instruments across the full lifecycle of plastics.",
+                localIssues: [
+                    "Clogging of urban storm drains and mountain streams (nullahs) by discarded polythene bags and PET bottles.",
+                    "Open burning of mixed plastic waste releasing carcinogenic dioxins, furans, and phthalates.",
+                    "Lack of source segregation and deposit-return infrastructure on university campuses and commercial hubs."
+                ],
+                solutions: [
+                    "Strict enforcement of single-use plastic bans and installation of smart reverse-vending recycling kiosks.",
+                    "Scaling biodegradable biopolymers derived from agricultural starch, chitosan, and fungal mycelium.",
+                    "Extended Producer Responsibility (EPR) mandating beverage and packaging brands to fund collection networks."
+                ],
+                citation: "UNEP (2023). Turning off the Tap: How the world can end plastic pollution and create a circular economy."
+            },
+            waste: {
+                badge: "Page 06 • Municipal Engineering & Resource Recovery",
+                title: "Integrated Solid & E-Waste Management",
+                subtitle: "Applying the 5R Waste Hierarchy - Refuse, Reduce, Reuse, Repurpose, Recycle - to transform municipal waste into valuable secondary raw materials.",
+                heroImg: IMAGES.waste,
+                secondaryImg: IMAGES.innovation,
+                secondaryCaption: "Automated optical sorting and aerobic in-vessel composting cut landfill methane emissions by over 70%.",
+                metrics: [
+                    { label: "Global MSW Generation", value: "2.1B Tons/yr", note: "Projected to reach 3.8B tons by 2050" },
+                    { label: "Organic Fraction", value: "44% - 55%", note: "Ideal for aerobic composting & biogas" },
+                    { label: "E-Waste Growth", value: "62M Tons/yr", note: "Fastest-growing hazardous waste stream" }
+                ],
+                overview: "Unsanitary open dumping generates toxic leachate that contaminates groundwater aquifers with heavy metals (lead, cadmium, mercury) and emits methane - a greenhouse gas 80 times more potent than CO₂ over a 20-year horizon. Integrated Solid Waste Management (ISWM) prioritizes upstream waste prevention, mandatory multi-stream segregation at source, anaerobic digestion of organics, and formal recycling of metals, glass, and electronic waste.",
+                localIssues: [
+                    "Unlined open dumping sites near peri-urban valleys causing soil and groundwater leachate contamination.",
+                    "Improper disposal of electronic waste (batteries, circuit boards, old laptops) containing toxic heavy metals.",
+                    "Absence of dedicated campus and municipal organic composting facilities for cafeteria and yard waste."
+                ],
+                solutions: [
+                    "Deploying color-coded 3-bin source separation systems (Organic, Recyclable, Residual) across institutions.",
+                    "Constructing decentralized aerobic composting units to convert food waste into nutrient-rich bio-fertilizer.",
+                    "Establishing certified E-Waste collection drives for safe recovery of gold, copper, and lithium."
+                ],
+                citation: "World Bank (2022). What a Waste 2.0: A Global Snapshot of Solid Waste Management to 2050."
+            },
+            water: {
+                badge: "Page 07 • Hydrology & Watershed Stewardship",
+                title: "Water Conservation & Hydrology",
+                subtitle: "Safeguarding freshwater aquifers, restoring riparian watersheds, and deploying nature-based wastewater treatment technologies.",
+                heroImg: IMAGES.water,
+                secondaryImg: IMAGES.watershed,
+                secondaryCaption: "Forested mountain watersheds act as natural sponges, recharging aquifers and preventing downstream erosion.",
+                metrics: [
+                    { label: "Accessible Freshwater", value: "< 1% of Earth", note: "97.5% saline, ~2% locked in ice caps" },
+                    { label: "Water Stressed Pop.", value: "2.4 Billion", note: "Living in water-scarce river basins" },
+                    { label: "Agricultural Share", value: "70% Withdrawal", note: "High potential for drip irrigation savings" }
+                ],
+                overview: "Freshwater is a finite, irreplaceable resource under severe pressure from groundwater over-extraction, industrial effluent discharge, agricultural fertilizer runoff (eutrophication), and climate-induced hydrological variability. Pakistan ranks among the top 15 most water-stressed nations globally, making integrated watershed management, rainwater harvesting, and greywater recycling vital national priorities.",
+                localIssues: [
+                    "Rapid depletion of groundwater tables in urban centers due to unchecked borewell pumping and paved surfaces.",
+                    "Direct discharge of untreated domestic greywater and sewage into natural mountain streams (e.g., Dor River basin).",
+                    "High water losses in conventional flood irrigation and leaking municipal distribution pipelines."
+                ],
+                solutions: [
+                    "Mandating rooftop rainwater harvesting systems and groundwater recharge wells in all institutional and residential buildings.",
+                    "Constructing engineered wetlands (reed-bed phytoremediation) to naturally purify campus and municipal wastewater.",
+                    "Adopting precision drip irrigation, soil moisture sensors, and aerator faucets to cut consumption by 40-60%."
+                ],
+                citation: "UNESCO World Water Assessment Programme (2024). The United Nations World Water Development Report."
+            },
+            energy: {
+                badge: "Page 08 • Clean Power & Grid Decarbonization",
+                title: "Renewable Energy Transition",
+                subtitle: "Accelerating utility-scale and distributed solar photovoltaics, wind turbines, green hydrogen, and smart microgrids.",
+                heroImg: IMAGES.energy,
+                secondaryImg: IMAGES.wind,
+                secondaryCaption: "Solar PV and onshore wind are now the cheapest sources of new electricity generation across 85% of the globe.",
+                metrics: [
+                    { label: "Solar PV Cost Drop", value: "-89% Since 2010", note: "Cheapest utility electricity in history" },
+                    { label: "COP28 Target", value: "3x Renewables", note: "11,000 GW global capacity by 2030" },
+                    { label: "Energy Efficiency", value: "2x Annual Rate", note: "4% annual efficiency improvement goal" }
+                ],
+                overview: "The energy sector accounts for roughly 73% of global greenhouse gas emissions. Achieving net-zero emissions by 2050 requires electrifying end-uses (transport, heating, industry) and powering grids with renewable energy sources - primarily solar photovoltaics (PV), onshore/offshore wind, hydropower, and geothermal - supported by lithium-iron-phosphate (LFP) battery storage and green hydrogen.",
+                localIssues: [
+                    "Heavy reliance on imported fossil fuels causing both high carbon intensity and economic vulnerability.",
+                    "Frequent grid instability and transmission losses during peak summer and winter demand.",
+                    "Underutilized rooftop solar potential across university academic blocks, hostels, and public buildings."
+                ],
+                solutions: [
+                    "Installing net-metered rooftop solar PV arrays paired with hybrid battery storage across campuses and homes.",
+                    "Upgrading building envelopes with passive solar heating, LED smart lighting, and high-efficiency HVAC systems.",
+                    "Promoting electric mobility (e-bikes, electric campus shuttles) powered directly by solar charging stations."
+                ],
+                citation: "International Energy Agency - IEA (2024). Renewables 2024: Analysis and Forecast to 2030."
+            },
+            air: {
+                badge: "Page 09 • Atmospheric Chemistry & Public Health",
+                title: "Air Quality & Atmospheric Science",
+                subtitle: "Combating fine particulate matter (PM2.5), tropospheric ozone, and winter smog through clean transport and real-time AQI telemetry.",
+                heroImg: IMAGES.air,
+                secondaryImg: IMAGES.climate,
+                secondaryCaption: "Vehicular exhaust, biomass burning, and industrial emissions form hazardous winter temperature inversions.",
+                metrics: [
+                    { label: "WHO PM2.5 Guideline", value: "5 µg/m³ Annual", note: "99% of global population breathes unsafe air" },
+                    { label: "Premature Mortality", value: "7 Million / yr", note: "WHO ambient & household air pollution data" },
+                    { label: "Black Carbon Impact", value: "Short-Lived", note: "Accelerates snow/glacier melt when deposited" }
+                ],
+                overview: "Air pollution is the single largest environmental health risk worldwide. Fine particulate matter (PM2.5, particles ≤ 2.5 micrometers) penetrates deep into pulmonary alveoli and enters the bloodstream, causing cardiovascular and respiratory diseases. Additionally, black carbon (soot) absorbs solar radiation in the atmosphere and darkens snow surfaces, accelerating cryospheric melting.",
+                localIssues: [
+                    "Winter temperature inversions trapping vehicular exhaust (NOx, CO, PM2.5) along major transport corridors like KKH.",
+                    "Open burning of autumn leaf litter, crop residues, and municipal waste in residential valleys.",
+                    "Lack of hyper-local, real-time Air Quality Index (AQI) monitoring stations for public health advisories."
+                ],
+                solutions: [
+                    "Enforcing Euro-5/Euro-6 fuel standards, catalytic converter inspections, and clean electric public transit.",
+                    "Banning open biomass/leaf burning and converting garden waste into mulch and biochar.",
+                    "Deploying low-cost IoT optical particulate sensors across campuses and cities with public AQI dashboards."
+                ],
+                citation: "World Health Organization - WHO (2021). WHO Global Air Quality Guidelines: Particulate Matter (PM2.5 and PM10)."
+            }
+        };
+
+        // =========================================================================
+        // 4. GLOBAL MILESTONES & CONFERENCES DATA (PAGE 11)
+        // =========================================================================
+        const GLOBAL_MILESTONES = [
+            {
+                year: "1972",
+                date: "June 5-16, 1972",
+                title: "UN Conference on the Human Environment (Stockholm Conference)",
+                location: "Stockholm, Sweden",
+                outcome: "First major international environmental summit; established the United Nations Environment Programme (UNEP) and designated June 5 as World Environment Day.",
+                impact: "Placed environmental protection onto the global diplomatic agenda for the first time."
+            },
+            {
+                year: "1987",
+                date: "September 16, 1987",
+                title: "Montreal Protocol on Substances that Deplete the Ozone Layer",
+                location: "Montreal, Canada",
+                outcome: "Phased out 99% of ozone-depleting substances (CFCs and halons). Universally ratified by all 198 UN member states.",
+                impact: "Considered the most successful environmental treaty in history; the Antarctic ozone layer is on track to full recovery by ~2066."
+            },
+            {
+                year: "1992",
+                date: "June 3-14, 1992",
+                title: "UNCED Rio Earth Summit",
+                location: "Rio de Janeiro, Brazil",
+                outcome: "Produced three landmark Rio Conventions: UNFCCC (Climate), CBD (Biodiversity), UNCCD (Desertification), plus Agenda 21.",
+                impact: "Created the legal architecture for all modern COP climate and biodiversity negotiations."
+            },
+            {
+                year: "1997",
+                date: "December 11, 1997",
+                title: "Kyoto Protocol (COP3)",
+                location: "Kyoto, Japan",
+                outcome: "First legally binding treaty requiring industrialized nations to reduce greenhouse gas emissions by an average of 5.2% below 1990 levels.",
+                impact: "Introduced carbon market mechanisms and Clean Development Mechanism (CDM) projects."
+            },
+            {
+                year: "2015",
+                date: "December 12, 2015",
+                title: "The Paris Agreement (COP21)",
+                location: "Paris, France",
+                outcome: "196 Parties pledged to limit global warming well below 2°C, pursuing efforts to cap temperature rise at 1.5°C through Nationally Determined Contributions (NDCs).",
+                impact: "Mobilized global net-zero commitments and climate finance transparency frameworks."
+            },
+            {
+                year: "2022",
+                date: "December 19, 2022",
+                title: "Kunming-Montreal Global Biodiversity Framework (COP15)",
+                location: "Montreal, Canada",
+                outcome: "Adopted the historic '30x30' target: conserving 30% of Earth's land, freshwater, and oceans by 2030 and restoring 30% of degraded ecosystems.",
+                impact: "Mobilized $200 billion annually for biodiversity conservation and indigenous stewardship."
+            },
+            {
+                year: "2023",
+                date: "November 30 - December 13, 2023",
+                title: "COP28 Dubai & The UAE Consensus",
+                location: "Dubai, UAE",
+                outcome: "First Global Stocktake concluded with an explicit call to 'transition away from fossil fuels in energy systems', triple renewable capacity by 2030, and operationalize the Loss & Damage Fund.",
+                impact: "Historic milestone for climate-vulnerable countries like Pakistan to access Loss & Damage recovery finance."
+            },
+            {
+                year: "2024",
+                date: "November 11-24, 2024",
+                title: "COP29 Baku Climate Finance Summit",
+                location: "Baku, Azerbaijan",
+                outcome: "Agreed on the New Collective Quantified Goal (NCQG) to mobilize at least $300 billion annually by 2035 for developing nations and finalized Article 6 global carbon market rules.",
+                impact: "Unlocked standardized international carbon trading and adaptation finance pipelines."
+            },
+            {
+                year: "2025",
+                date: "November 10-21, 2025",
+                title: "COP30 Belém Amazonia Summit",
+                location: "Belém, Brazil",
+                outcome: "Centered on tropical forest conservation, halting global deforestation by 2030, and submitting enhanced 2035 Nationally Determined Contributions (NDC 3.0).",
+                impact: "Integrated biodiversity protection directly with national climate mitigation roadmaps."
+            },
+            {
+                year: "National",
+                date: "2018 - Present",
+                title: "Pakistan's Ten Billion Tree Tsunami & Living Indus Initiative",
+                location: "Islamabad & Nationwide, Pakistan",
+                outcome: "Flagship ecosystem restoration programs rehabilitating degraded forests in Khyber Pakhtunkhwa, restoring mangrove deltas, and protecting the Indus River Basin.",
+                impact: "Recognized by UNEP as one of the world's top ten World Restoration Flagships."
+            }
+        ];
+
+        // =========================================================================
+        // 5. 10-QUESTION SCIENTIFIC SUSTAINABILITY QUIZ DATA (PAGE 14)
+        // =========================================================================
+        const QUIZ_QUESTIONS = [
+            {
+                q: "1. What is the primary temperature threshold established by the 2015 Paris Agreement (COP21) to prevent catastrophic climate tipping points?",
+                options: [
+                    "Limiting warming well below 2°C, pursuing efforts to cap it at 1.5°C above pre-industrial levels",
+                    "Keeping global temperatures below 3.5°C by the year 2100",
+                    "Stabilizing atmospheric CO₂ at exactly 600 ppm",
+                    "Reducing global ocean temperatures by 2°C within a decade"
+                ],
+                answer: 0,
+                explanation: "The Paris Agreement legally binds 196 parties to keep global mean temperature rise well below 2°C and strive for 1.5°C above 1850-1900 levels."
+            },
+            {
+                q: "2. Which 1987 international environmental treaty successfully phased out 99% of ozone-depleting chlorofluorocarbons (CFCs)?",
+                options: [
+                    "The Kyoto Protocol",
+                    "The Basel Convention",
+                    "The Montreal Protocol",
+                    "The Stockholm Convention"
+                ],
+                answer: 2,
+                explanation: "Signed in 1987, the Montreal Protocol is universally ratified and has put the stratospheric ozone layer on track for complete recovery."
+            },
+            {
+                q: "3. Under the 2022 Kunming-Montreal Global Biodiversity Framework (COP15), what does the landmark '30x30' target stipulate?",
+                options: [
+                    "Planting 30 million trees in 30 capital cities",
+                    "Conserving at least 30% of Earth's land, freshwater, and oceans by 2030",
+                    "Reducing plastic packaging by 30% over 30 years",
+                    "Generating 30% of nuclear energy from 30 countries"
+                ],
+                answer: 1,
+                explanation: "Target 3 of the Kunming-Montreal GBF commits nations to effectively conserve and manage at least 30% of terrestrial, inland water, and marine areas by 2030."
+            },
+            {
+                q: "4. Approximately what percentage of all plastic waste ever produced globally has actually been recycled?",
+                options: [
+                    "Around 52%",
+                    "Around 34%",
+                    "Only about 9%",
+                    "Nearly 75%"
+                ],
+                answer: 2,
+                explanation: "According to UNEP and OECD global plastics outlooks, only ~9% of plastic waste is recycled, while the vast majority accumulates in landfills or the natural environment."
+            },
+            {
+                q: "5. Which greenhouse gas has a Global Warming Potential (GWP) roughly 80 times greater than CO₂ over a 20-year timeframe and is heavily emitted by open landfills?",
+                options: [
+                    "Methane (CH₄)",
+                    "Argon (Ar)",
+                    "Sulfur Dioxide (SO₂)",
+                    "Water Vapor (H₂O)"
+                ],
+                answer: 0,
+                explanation: "Methane (CH₄) is a potent short-lived climate pollutant emitted from anaerobic decomposition in landfills, agriculture, and fossil fuel leaks."
+            },
+            {
+                q: "6. In the context of Abbottabad's montane ecology, what is the dominant native pine species facing pressure from urbanization and forest fires?",
+                options: [
+                    "Mangrove (Rhizophora mucronata)",
+                    "Chir Pine (Pinus roxburghii) & Blue Pine (Pinus wallichiana)",
+                    "Giant Sequoia (Sequoiadendron giganteum)",
+                    "Baobab (Adansonia digitata)"
+                ],
+                answer: 1,
+                explanation: "Abbottabad and the Hazara hills are dominated by subtropical Chir Pine (Pinus roxburghii) at lower elevations and Himalayan Blue Pine (Kail) higher up."
+            },
+            {
+                q: "7. Which atmospheric pollutant consists of fine inhalable particles ≤ 2.5 micrometers in diameter capable of entering the human bloodstream?",
+                options: [
+                    "PM2.5 (Fine Particulate Matter)",
+                    "Stratospheric Ozone (O₃)",
+                    "Nitrogen Gas (N₂)",
+                    "Helium (He)"
+                ],
+                answer: 0,
+                explanation: "PM2.5 penetrates deep into lung alveoli and crosses into the cardiovascular system, making it the primary driver of smog-related health risks."
+            },
+            {
+                q: "8. What historic decision was finalized at COP28 in Dubai (2023) to support climate-vulnerable nations like Pakistan after extreme climate disasters?",
+                options: [
+                    "Abolishing all carbon taxes worldwide",
+                    "Operationalizing the Loss and Damage Fund and transitioning away from fossil fuels",
+                    "Ending all renewable energy subsidies",
+                    "Replacing the UN with private corporations"
+                ],
+                answer: 1,
+                explanation: "COP28 operationalized the Loss and Damage Fund on its opening day and adopted the UAE Consensus to transition away from fossil fuels."
+            },
+            {
+                q: "9. Which UN Sustainable Development Goal (SDG) specifically focuses on 'Climate Action' to combat climate change and its impacts?",
+                options: [
+                    "SDG 4",
+                    "SDG 9",
+                    "SDG 13",
+                    "SDG 17"
+                ],
+                answer: 2,
+                explanation: "SDG 13 ('Take urgent action to combat climate change and its impacts') works alongside SDG 6 (Clean Water), SDG 7 (Clean Energy), and SDG 15 (Life on Land)."
+            },
+            {
+                q: "10. What is the single most effective upstream action in the Integrated Solid Waste Management (ISWM) hierarchy?",
+                options: [
+                    "Open-air incineration",
+                    "Deep-sea dumping",
+                    "Waste Prevention / Source Reduction (Refuse & Reduce)",
+                    "Unlined landfilling"
+                ],
+                answer: 2,
+                explanation: "Preventing waste generation at the source eliminates raw material extraction, manufacturing emissions, and disposal burdens altogether."
+            }
+        ];
+
+        // =========================================================================
+        // 6. STATE MANAGEMENT & LOCALSTORAGE PERSISTENCE
+        // Pre-populated Visitor Solutions Portfolio + User submissions
+        const DEFAULT_SOLUTIONS = [
+            {
+                id: 1,
+                author: "Rouman (SP26-BES-001)",
+                role: "B.Sc. Environmental Sciences, COMSATS Abbottabad",
+                scope: "Local • COMSATS Campus",
+                category: "Waste & Circularity",
+                title: "Campus-Wide Aerobic Bioreactor Composting Unit",
+                problem: "Daily organic cafeteria and fallen pine-needle waste on campus is currently mixed with general municipal trash.",
+                solution: "Install a modular in-vessel aerobic composter near the botanical garden to convert 150 kg/day of organic waste into nutrient-rich humus for campus landscaping within 21 days.",
+                votes: 48
+            },
+            {
+                id: 2,
+                author: "Dr. S. Khan (Faculty Reviewer)",
+                role: "Watershed Hydrology Researcher",
+                scope: "Local • Abbottabad Valley",
+                category: "Water Conservation",
+                title: "Rooftop Rainwater Harvesting & Recharge Wells in Abbottabad",
+                problem: "Abbottabad receives ~1,200 mm annual rainfall, yet rapid concrete urbanization causes flash runoff while groundwater tables drop.",
+                solution: "Retrofit academic and residential roofs with first-flush diverters feeding underground gravel-sand recharge wells to replenish local aquifers.",
+                votes: 39
+            },
+            {
+                id: 3,
+                author: "Mahnoor Siddiqui",
+                role: "Undergraduate Student, EPS Member",
+                scope: "Global • Urban Mobility",
+                category: "Clean Energy & Air",
+                title: "Solar-Powered Campus E-Shuttle & Carpool Network",
+                problem: "Morning and afternoon peak traffic on University Road generates localized PM2.5 and NOx spikes.",
+                solution: "Deploy a student carpool matching app paired with solar-charged electric campus shuttles connecting Mandian, Supply, and COMSATS Gate.",
+                votes: 31
+            }
+        ];
+
+        // =========================================================================
+        // State, storage, helpers
+        // =========================================================================
+        let currentPage = 'home';
+        let quizState = { answers: Array(QUIZ_QUESTIONS.length).fill(null), submitted: false, score: 0 };
+
+        const DEFAULT_SCORES = [
+            { name: "Rouman", dept: "BS Environmental Sciences", score: 10, total: 10, badge: "Laureate" },
+            { name: "Ayesha Tariq", dept: "Environmental Sciences", score: 9, total: 10, badge: "Laureate" },
+            { name: "Hamza Jadoon", dept: "Biotechnology", score: 8, total: 10, badge: "Scholar" },
+            { name: "Zainab Abbasi", dept: "Computer Science", score: 8, total: 10, badge: "Scholar" }
+        ];
+
+        function getStoredData(key, fallback) {
+            try { const raw = localStorage.getItem(key); return raw ? JSON.parse(raw) : fallback; }
+            catch (e) { return fallback; }
+        }
+        function setStoredData(key, val) {
+            try { localStorage.setItem(key, JSON.stringify(val)); } catch (e) { /* storage unavailable */ }
+        }
+        function esc(s) {
+            return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+        }
+        function img(src, alt) {
+            return `<img src="${src}" alt="${esc(alt)}" loading="lazy" onerror="this.style.visibility='hidden'">`;
+        }
+        function showToast(title, msg, isError = false) {
+            const t = document.getElementById('toast');
+            t.className = 'toast show' + (isError ? ' error' : '');
+            t.innerHTML = `<b>${esc(title)}.</b>${esc(msg)}`;
+            clearTimeout(window._toastTimer);
+            window._toastTimer = setTimeout(() => t.classList.remove('show'), 4200);
+        }
+
+        // =========================================================================
+        // Contents
+        // =========================================================================
+        const CONTENTS = [
+            { group: "Topics", items: [
+                { id: 'climate', desc: 'Warming, the 1.5°C limit and glacier melt.' },
+                { id: 'biodiversity', desc: 'Species loss and the 30x30 protection target.' },
+                { id: 'plastic', desc: 'Microplastics, recycling rates and alternatives.' },
+                { id: 'waste', desc: 'The 5R hierarchy, composting and e-waste.' },
+                { id: 'water', desc: 'Watersheds, aquifers and rainwater harvesting.' },
+                { id: 'energy', desc: 'Solar, wind, storage and the grid.' },
+                { id: 'air', desc: 'PM2.5, winter smog and monitoring.' },
+                { id: 'sdgs', desc: 'The seven environmental goals of Agenda 2030.' }
+            ]},
+            { group: "Context", items: [
+                { id: 'milestones', desc: 'From Stockholm 1972 to COP30 in Belém.' },
+                { id: 'abbottabad', desc: 'Pine forests, the Dor River and the campus.' },
+                { id: 'innovations', desc: 'Direct air capture, perovskite solar, biochar.' }
+            ]},
+            { group: "Take part", items: [
+                { id: 'quiz', desc: 'Ten questions and a scoreboard.' },
+                { id: 'pledge', desc: 'Choose commitments, estimate the CO₂ saved.' },
+                { id: 'community', desc: 'Read and endorse proposals, or add your own.' }
+            ]},
+            { group: "Reference", items: [
+                { id: 'research', desc: 'Papers and reports behind the figures.' },
+                { id: 'about', desc: 'Who built this and why.' }
+            ]}
+        ];
+        const SHORT_TITLES = {
+            home: 'Home', about: 'About this site', climate: 'Climate change', biodiversity: 'Biodiversity',
+            plastic: 'Plastic and circularity', waste: 'Waste management', water: 'Water', energy: 'Clean energy',
+            air: 'Air quality', sdgs: 'Sustainable Development Goals', milestones: 'Global milestones',
+            abbottabad: 'Abbottabad case study', innovations: 'Frontier technology', quiz: 'Quiz',
+            pledge: 'Pledge', community: 'Visitor proposals', research: 'References'
+        };
+        const pageNum = id => (PAGES.find(p => p.id === id) || {}).num || '';
+
+        function rowHtml(item, extra = '') {
+            return `<button class="row" onclick="navigateTo('${item.id}')">
+                <span class="row-num">${pageNum(item.id)}</span>
+                <span><span class="row-title">${SHORT_TITLES[item.id]}</span>${item.desc ? `<span class="row-desc" style="display:block">${item.desc}</span>` : ''}</span>
+                ${extra}
+            </button>`;
+        }
+
+        function buildIndexDialog() {
+            document.getElementById('index-body').innerHTML = CONTENTS.map(g => `
+                <section><h3>${g.group}</h3>${g.items.map(i => rowHtml(i)).join('')}</section>
+            `).join('');
+        }
+        function openIndex() {
+            const d = document.getElementById('index-dialog');
+            if (!d.open) d.showModal();
+        }
+        function closeIndex() {
+            const d = document.getElementById('index-dialog');
+            if (d.open) d.close();
+        }
+        document.getElementById('index-dialog').addEventListener('click', e => {
+            if (e.target.id === 'index-dialog') closeIndex();
+        });
+        window.addEventListener('keydown', e => {
+            if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+                e.preventDefault();
+                const d = document.getElementById('index-dialog');
+                d.open ? closeIndex() : openIndex();
+            }
+        });
+
+        // =========================================================================
+        // Router (hash based so the browser back button works)
+        // =========================================================================
+        function navigateTo(id) {
+            closeIndex();
+            if (location.hash.slice(1) === id) { renderCurrentPage(true); return; }
+            location.hash = id;
+        }
+        window.addEventListener('hashchange', () => renderCurrentPage(true));
+
+        function pager(id) {
+            const i = PAGES.findIndex(p => p.id === id);
+            const prev = PAGES[i - 1], next = PAGES[i + 1];
+            return `<nav class="pager" aria-label="Previous and next page">
+                ${prev ? `<button onclick="navigateTo('${prev.id}')"><small>← Previous</small><span>${SHORT_TITLES[prev.id]}</span></button>` : '<span></span>'}
+                ${next ? `<button class="next" onclick="navigateTo('${next.id}')"><small>Next →</small><span>${SHORT_TITLES[next.id]}</span></button>` : ''}
+            </nav>`;
+        }
+
+
+        function chars(word, offset) {
+            return '<span>' + word.split('').map((c, i) => `<i class="ch" aria-hidden="true" style="--i:${offset + i}">${c}</i>`).join('') + '</span>';
+        }
+        function pageTop(id, kind, title, lede, extra = '') {
+            return `<section class="page-top"><div class="wrap">
+                <p class="eyebrow"><b>${pageNum(id)}</b>${kind}</p>
+                <h1 class="h1">${title}</h1>
+                <p class="lede">${lede}</p>${extra}
+            </div><span class="ghost" aria-hidden="true">${pageNum(id)}</span></section>`;
+        }
+
+        // =========================================================================
+        // Views
+        // =========================================================================
+        function viewHome() {
+            const facts = [
+                { n: '1.5°C', l: 'The warming limit set by the Paris Agreement in 2015.' },
+                { n: '30×30', l: 'Share of land and sea to be protected by 2030.' },
+                { n: '9%', l: 'Of all plastic ever made that has been recycled.' }
+            ];
+            const tiles = [
+                { id: 'climate', img: IMAGES.climate, d: 'Warming, the 1.5°C limit and melting glaciers.' },
+                { id: 'biodiversity', img: IMAGES.biodiversity, d: 'Species loss and the 30x30 target.' },
+                { id: 'plastic', img: IMAGES.plastic, d: 'Microplastics and why recycling falls short.' },
+                { id: 'waste', img: IMAGES.waste, d: 'The 5R hierarchy, composting and e-waste.' },
+                { id: 'water', img: IMAGES.water, d: 'Watersheds and rainwater harvesting.' },
+                { id: 'energy', img: IMAGES.energy, d: 'Solar, wind, storage.' },
+                { id: 'air', img: IMAGES.air, d: 'PM2.5 and winter smog.' },
+                { id: 'sdgs', img: IMAGES.sdgs, d: 'Seven goals of Agenda 2030.' }
+            ];
+            const terms = ['Climate', 'Biodiversity', 'Plastic', 'Waste', 'Water', 'Energy', 'Air', 'Abbottabad'];
+            const run = terms.map(t => `<span>${t}</span>`).join('');
+            const others = CONTENTS.slice(1);
+            const seal = `<div class="seal" aria-hidden="true">
+                <svg viewBox="0 0 120 120"><defs><path id="circ" d="M60 60 m-47 0 a47 47 0 1 1 94 0 a47 47 0 1 1 -94 0"/></defs>
+                <circle cx="60" cy="60" r="59" fill="#0a2318"/>
+                <text font-size="10.5" font-family="Poppins" font-weight="500" letter-spacing="3.1" fill="#f1f5e9"><textPath href="#circ">EIGHT TOPICS · ONE PLANET · EIGHT TOPICS · ONE PLANET ·</textPath></text></svg>
+                <span class="core"><svg viewBox="0 0 32 32" width="30" height="30"><path d="M9 22c0-8 5-12 14-12 0 8-4 13-12 13M9 22c3-4 6-6 10-8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>`;
+            return `
+            <div class="view">
+                <section class="hero-full">
+                    <div class="bg">${img(IMAGES.pineForest, 'Pine forest on a mountain slope')}</div>
+                    <div class="wrap hero-word"><h1 aria-label="EcoSphere Nexus">${chars('Ecosphere', 0)}${chars('Nexus', 9)}</h1></div>
+                    <div>
+                        <div class="wrap hero-lower">
+                            <p>A field guide to a warming world, written from the Hazara hills.</p>
+                            <div class="hero-actions on-dark" style="margin:0">
+                                <button class="btn btn-mint" onclick="navigateTo('climate')">Start reading <span class="arrow">→</span></button>
+                                <button class="link" onclick="navigateTo('quiz')">Take the quiz <span class="arrow">→</span></button>
+                            </div>
+                        </div>
+                        <div class="strip-wrap">
+                            ${seal}
+                            <div class="strip">
+                            ${tiles.slice(0, 7).map((t, i) => `<button class="card" style="--i:${i}" onclick="navigateTo('${t.id}')">${img(t.img, '')}<span>${SHORT_TITLES[t.id]}</span></button>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="wrap">
+                    <section class="facts-float" aria-label="Three numbers to start with">
+                        ${facts.map(f => `<div class="fact"><div class="fact-n">${f.n}</div><p class="fact-l">${f.l}</p></div>`).join('')}
+                    </section>
+                </div>
+
+                <div class="band"><div class="wrap">
+                    <div class="section-head" style="border:0;padding:0">
+                        <h2 class="h2" style="max-width:14ch">Eight topics, one planet</h2>
+                        <p class="small" style="max-width:30ch">Each page covers the science, what it means here, and what works.</p>
+                    </div>
+                    <div class="tiles" style="margin-top:2.5rem">
+                        ${tiles.map(t => `<button class="tile" onclick="navigateTo('${t.id}')">
+                            ${img(t.img, '')}
+                            <span class="n">${pageNum(t.id)}</span>
+                            <span class="go" aria-hidden="true">→</span>
+                            <span><h3>${SHORT_TITLES[t.id]}</h3><p>${t.d}</p></span>
+                        </button>`).join('')}
+                    </div>
+                </div></div>
+
+                <div class="marquee" aria-hidden="true"><div class="marquee-track">${run}${run}${run}${run}</div></div>
+
+                <div class="band tint last"><div class="wrap">
+                    <div class="section-head" style="border:0;padding:0">
+                        <h2 class="h2" style="max-width:14ch">Go further</h2>
+                        <p class="small" style="max-width:30ch">Context, things to do, and the sources behind the numbers.</p>
+                    </div>
+                    <div class="panels" style="margin-top:2.5rem">
+                        ${others.map(g => `<div class="panel"><h3>${g.group}</h3>${g.items.map(i => rowHtml(i, '<span class="arrow muted">→</span>')).join('')}</div>`).join('')}
+                    </div>
+                </div></div>
+            </div>`;
+        }
+
+                function viewAbout() {
+            return `
+            <div class="view">
+                <section class="page-top"><div class="wrap">
+                    <p class="eyebrow"><b>02</b>About this site</p>
+                    <h1 class="h1">Made for a competition, meant to be used.</h1>
+                    <p class="lede">EcoSphere Nexus was built for the Environmental Protection Society website competition at COMSATS University Islamabad, Abbottabad Campus, Students' Week Fall 2026. The theme was environmental sustainability.</p>
+                
+                </div><span class="ghost" aria-hidden="true">02</span></section>
+                <div class="band last"><div class="wrap">
+
+                <section class="split">
+                    <div class="prose">
+                        <h2 class="h2" style="margin-bottom:1.25rem">How it's put together</h2>
+                        <p>Every figure on the topic pages is tied to a named source, listed in full on the references page. The treaty timeline follows the official dates of each conference.</p>
+                        <p>The site covers eight topics, a milestone timeline, a local case study, and three things you can do: take the quiz, sign the pledge, or propose a solution. Scores, pledges and proposals stay in your own browser.</p>
+                    </div>
+                    <dl class="facts-dl">
+                        <div><dt>Built by</dt><dd>Rouman, SP26-BES-001</dd></div>
+                        <div><dt>Department</dt><dd>Environmental Sciences</dd></div>
+                        <div><dt>Campus</dt><dd>COMSATS Abbottabad</dd></div>
+                        <div><dt>Organiser</dt><dd>Environmental Protection Society</dd></div>
+                        <div><dt>Theme</dt><dd>Environmental sustainability</dd></div>
+                    </dl>
+                </section>
+                ${pager('about')}
+                </div></div>
+            </div>`;
+        }
+
+        function viewThemePage(key) {
+            const d = THEME_DATA[key];
+            const [num, kind] = d.badge.replace(/^Page\s+/, '').split('•').map(s => s.trim());
+            return `
+            <div class="view">
+                <section class="topic-hero">
+                    <div class="bg">${img(d.heroImg, d.title)}</div>
+                    <div class="wrap">
+                        <p class="eyebrow"><b>${num}</b>${esc(kind)}</p>
+                        <h1 class="h1">${d.title}</h1>
+                        <p class="lede">${d.subtitle}</p>
+                    </div>
+                </section>
+                <div class="wrap">
+                    <section class="stats stats-float" aria-label="Key figures">
+                        ${d.metrics.map(m => `<div class="stat"><div class="stat-l">${m.label}</div><div class="stat-v">${m.value}</div><p class="stat-n">${m.note}</p></div>`).join('')}
+                    </section>
+                </div>
+                <div class="band last"><div class="wrap">
+                    <section class="split">
+                        <div>
+                            <h2 class="h2" style="margin-bottom:1.5rem">What's happening</h2>
+                            <div class="prose"><p>${d.overview}</p></div>
+                            <div class="source"><b>SOURCE</b>${d.citation}</div>
+                        </div>
+                        <figure class="aside-fig">
+                            ${img(d.secondaryImg, d.secondaryCaption)}
+                            <figcaption>${d.secondaryCaption}</figcaption>
+                        </figure>
+                    </section>
+
+                    <section class="cols" style="gap:1.25rem">
+                        <div class="panel-dark">
+                            <p class="tag">THE PRESSURE</p>
+                            <h2 class="h2" style="margin-top:.5rem">On the ground here</h2>
+                            <ol class="numbered">${d.localIssues.map(i => `<li>${i}</li>`).join('')}</ol>
+                        </div>
+                        <div class="panel-leaf">
+                            <p class="tag">THE RESPONSE</p>
+                            <h2 class="h2" style="margin-top:.5rem">What works</h2>
+                            <ol class="numbered fix">${d.solutions.map(i => `<li>${i}</li>`).join('')}</ol>
+                        </div>
+                    </section>
+
+                    <p><button class="link" onclick="navigateTo('community')">Propose a solution on this topic <span class="arrow">→</span></button></p>
+                    ${pager(key)}
+                </div></div>
+            </div>`;
+        }
+
+                function viewSDGs() {
+            const goals = [
+                { num: "6", title: "Clean water and sanitation", target: "Ensure availability and sustainable management of water and sanitation for all by 2030.", metric: "Target 6.3: halve the share of untreated wastewater and increase safe recycling." },
+                { num: "7", title: "Affordable and clean energy", target: "Ensure access to affordable, reliable, sustainable and modern energy for all.", metric: "Target 7.2: substantially raise the share of renewables in the global energy mix." },
+                { num: "11", title: "Sustainable cities and communities", target: "Make cities and human settlements inclusive, safe, resilient and sustainable.", metric: "Target 11.6: reduce the environmental impact of cities, including air quality and waste." },
+                { num: "12", title: "Responsible consumption and production", target: "Ensure sustainable consumption and production patterns across supply chains.", metric: "Target 12.5: substantially reduce waste through prevention, reduction and recycling." },
+                { num: "13", title: "Climate action", target: "Take urgent action to combat climate change and its impacts.", metric: "Target 13.1: strengthen resilience and adaptive capacity to climate-related hazards." },
+                { num: "14", title: "Life below water", target: "Conserve and sustainably use the oceans, seas and marine resources.", metric: "Target 14.1: prevent and significantly reduce marine pollution, especially from land-based plastics." },
+                { num: "15", title: "Life on land", target: "Protect, restore and promote sustainable use of terrestrial ecosystems and forests.", metric: "Target 15.2: promote sustainable forest management, halt deforestation, restore degraded land." }
+            ];
+            return `
+            <div class="view">
+                <section class="page-top"><div class="wrap">
+                    <p class="eyebrow"><b>10</b>UN Agenda 2030</p>
+                    <h1 class="h1">The environmental Sustainable Development Goals</h1>
+                    <p class="lede">Seven of the seventeen goals deal directly with the environment. Each has a headline aim and a measurable target.</p>
+                
+                </div><span class="ghost" aria-hidden="true">10</span></section>
+                <div class="band last"><div class="wrap">
+                <section class="ruled">
+                    ${goals.map(s => `
+                    <article class="ruled-item">
+                        <p class="tag">Goal ${s.num}</p>
+                        <div><h3>${s.title}</h3><p style="margin-top:.6rem">${s.target}</p></div>
+                        <p class="target">${s.metric}</p>
+                    </article>`).join('')}
+                </section>
+                ${pager('sdgs')}
+                </div></div>
+            </div>`;
+        }
+
+        function viewMilestones() {
+            return `
+            <div class="view">
+                <section class="page-top"><div class="wrap">
+                    <p class="eyebrow"><b>11</b>Environmental diplomacy</p>
+                    <h1 class="h1">Landmarks that moved the world forward</h1>
+                    <p class="lede">Summits, treaties and national programmes from 1972 to today, in order.</p>
+                
+                </div><span class="ghost" aria-hidden="true">11</span></section>
+                <div class="band last"><div class="wrap">
+                <section class="timeline">
+                    ${GLOBAL_MILESTONES.map(m => `
+                    <article class="mile">
+                        <div><div class="mile-year">${m.year}</div><div class="mile-date">${m.date}</div></div>
+                        <div>
+                            <h3>${m.title}</h3>
+                            <p class="where">${m.location}</p>
+                            <p>${m.outcome}</p>
+                            <p class="impact"><b>Why it matters.</b> ${m.impact}</p>
+                        </div>
+                    </article>`).join('')}
+                </section>
+                ${pager('milestones')}
+                </div></div>
+            </div>`;
+        }
+
+        function viewAbbottabad() {
+            const issues = [
+                { t: "Pine forest fires and hillside building", c: "Dry pine needles fuel fast surface fires each autumn, and unplanned construction on the slopes makes landslides more likely.", s: "Collect fallen needles for biomass briquettes, enforce green-belt zoning, and replant with native oak and pine." },
+                { t: "Pollution in the nullahs and the Dor River", c: "Household greywater and plastic litter go straight into seasonal streams and degrade water downstream.", s: "Fit trash booms at stream junctions and build reed-bed wetlands to filter the water naturally." },
+                { t: "Traffic on the KKH and University Road", c: "Congestion along the Karakoram Highway and University Road builds up PM2.5 and black carbon.", s: "Run solar-assisted electric shuttles, reward student carpools, and plant roadside vegetation as an air filter." },
+                { t: "Campus and municipal waste", c: "Single-use plastic and food waste need to be separated at source to keep them off the hillsides.", s: "Create plastic-free zones, install refill stations, and build an on-campus composting plant." }
+            ];
+            return `
+            <div class="view">
+                <section class="page-top"><div class="wrap">
+                    <p class="eyebrow"><b>12</b>Regional case study · Khyber Pakhtunkhwa</p>
+                    <h1 class="h1">Abbottabad and the COMSATS campus</h1>
+                    <p class="lede">The Orash Valley sits at 1,256 m. Rapid growth there has to be balanced against Chir pine forest, mountain watersheds and the campus itself.</p>
+                
+                </div><span class="ghost" aria-hidden="true">12</span></section>
+                <div class="band last"><div class="wrap">
+                <figure class="banner">${img(IMAGES.abbottabadHills, 'Pine-covered hills around Abbottabad')}</figure>
+
+                <section class="split flip">
+                    <figure class="aside-fig">${img(IMAGES.comsatsCampus, 'University campus buildings')}<figcaption>The campus works as a living laboratory.</figcaption></figure>
+                    <div class="prose">
+                        <h2 class="h2" style="margin-bottom:1.25rem">A campus in the foothills</h2>
+                        <p>The Abbottabad campus sits among pine-covered foothills. Environmental Sciences students and the Environmental Protection Society use it to try out waste segregation, conservation work and renewable energy projects.</p>
+                        <p>The surrounding Shimla Hill, Ilyasi and Thandiani slopes shape the local microclimate and feed the Dor River system. Protecting the Chir pine (<em>Pinus roxburghii</em>) stands from summer fires and encroachment is central to preventing landslides.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="section-head"><h2 class="h2">Four problems, four responses</h2></div>
+                    ${issues.map((it, i) => `
+                    <article class="issue">
+                        <h3><span class="mono" style="font-size:.75rem;color:var(--accent);display:block;margin-bottom:.4rem">0${i + 1}</span>${it.t}</h3>
+                        <dl><dt>THE PROBLEM</dt><dd>${it.c}</dd></dl>
+                        <dl><dt class="fix-dt">THE RESPONSE</dt><dd>${it.s}</dd></dl>
+                    </article>`).join('')}
+                </section>
+                ${pager('abbottabad')}
+                </div></div>
+            </div>`;
+        }
+
+        function viewInnovations() {
+            const techs = [
+                { tag: "Carbon removal", title: "Direct air capture and mineralization", desc: "Modular scrubbers pull CO₂ from ambient air and inject it into basalt, where it turns into carbonate rock within about two years.", metric: "Stored for 10,000+ years" },
+                { tag: "Solar", title: "Perovskite-silicon tandem cells", desc: "A perovskite layer on top of silicon captures both blue and red light, pushing conversion efficiency past 33%.", metric: "33.9% lab efficiency record" },
+                { tag: "Materials", title: "Mycelium and seaweed packaging", desc: "Hemp or corn husks bound by mushroom mycelium make fire-resistant, waterproof packaging that breaks down in garden soil in about 30 days.", metric: "No microplastic residue" },
+                { tag: "Soil and climate", title: "Pyrolytic biochar", desc: "Heating forestry and pine-needle residue in low-oxygen kilns produces stable carbon that stays in the soil for centuries and improves water retention.", metric: "2.5 t CO₂e locked per tonne" },
+                { tag: "Conservation", title: "Acoustic and satellite monitoring", desc: "Solar-powered acoustic sensors and hyperspectral satellites pick up chainsaws and animal movement in real time.", metric: "Continuous coverage" },
+                { tag: "Water", title: "Atmospheric water harvesting", desc: "Metal-organic framework sorbents collect moisture from dry mountain air overnight and release drinking water using low-grade solar heat.", metric: "Works at 20% humidity" }
+            ];
+            return `
+            <div class="view">
+                <section class="page-top"><div class="wrap">
+                    <p class="eyebrow"><b>13</b>Frontier technology</p>
+                    <h1 class="h1">Six technologies worth watching</h1>
+                    <p class="lede">Some are in pilot plants, some are in the lab. All of them change what is possible for carbon, water and materials.</p>
+                
+                </div><span class="ghost" aria-hidden="true">13</span></section>
+                <div class="band last"><div class="wrap">
+                <section class="tech" style="border-top:1px solid var(--rule-strong)">
+                    ${techs.map(t => `
+                    <article class="tech-item">
+                        <p class="tag">${t.tag}</p>
+                        <h3 class="h3" style="margin-top:.4rem">${t.title}</h3>
+                        <p>${t.desc}</p>
+                        <p class="stat-pill">${t.metric}</p>
+                    </article>`).join('')}
+                </section>
+                ${pager('innovations')}
+                </div></div>
+            </div>`;
+        }
+
+        // ---- Quiz ----
+        function rankFor(score) {
+            if (score >= 9) return "Laureate";
+            if (score >= 7) return "Scholar";
+            if (score >= 5) return "Advocate";
+            return "Explorer";
+        }
+        function viewQuiz() {
+            const scores = getStoredData('ecosphere_scoreboard', DEFAULT_SCORES).slice().sort((a, b) => b.score - a.score);
+            const answered = quizState.answers.filter(a => a !== null).length;
+            const total = QUIZ_QUESTIONS.length;
+            return `
+            <div class="view">
+                <section class="page-top"><div class="wrap">
+                    <p class="eyebrow"><b>14</b>Knowledge check</p>
+                    <h1 class="h1">Ten questions on climate, nature and waste</h1>
+                    <p class="lede">Answer all ten, see the explanations, then add your score to the board if you like.</p>
+                    <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="${total}" aria-valuenow="${answered}" aria-label="Questions answered"><i style="width:${answered / total * 100}%"></i></div>
+                    <p class="small mono">${answered} of ${total} answered</p>
+                
+                </div><span class="ghost" aria-hidden="true">14</span></section>
+                <div class="band last"><div class="wrap">
+
+                <div class="quiz-layout">
+                    <div>
+                        ${QUIZ_QUESTIONS.map((item, qi) => {
+                            const sel = quizState.answers[qi];
+                            return `
+                            <section class="q" aria-labelledby="q${qi}">
+                                <h3 id="q${qi}"><span>${String(qi + 1).padStart(2, '0')}</span>${item.q.replace(/^\d+\.\s*/, '')}</h3>
+                                <div class="opts">
+                                    ${item.options.map((opt, oi) => {
+                                        let cls = 'opt', mark = '';
+                                        if (quizState.submitted) {
+                                            if (oi === item.answer) { cls += ' right'; mark = 'Correct'; }
+                                            else if (sel === oi) { cls += ' wrong'; mark = 'Your answer'; }
+                                            else cls += ' dim';
+                                        }
+                                        return `<button class="${cls}" aria-pressed="${sel === oi}" ${quizState.submitted ? 'disabled' : ''} onclick="selectQuizOption(${qi}, ${oi})">
+                                            <b>${String.fromCharCode(65 + oi)}</b><span>${opt}</span><span class="mark">${mark}</span>
+                                        </button>`;
+                                    }).join('')}
+                                </div>
+                                ${quizState.submitted ? `<p class="why"><b>Why.</b> ${item.explanation}</p>` : ''}
+                            </section>`;
+                        }).join('')}
+
+                        <div class="quiz-actions">
+                            ${!quizState.submitted ? `
+                                <button class="btn" onclick="submitQuiz()">See my score <span class="arrow">→</span></button>
+                            ` : `
+                                <div><div class="score-big">${quizState.score}<span class="muted" style="font-size:1.5rem">/${total}</span></div><p class="small">${rankFor(quizState.score)}</p></div>
+                                <button class="btn btn-ghost" onclick="resetQuiz()">Retake</button>
+                            `}
+                        </div>
+
+                        ${quizState.submitted ? `
+                        <form onsubmit="saveQuizScore(event)" class="form-grid two" style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--rule-strong)">
+                            <div style="grid-column:1/-1"><h2 class="h3">Add your score to the board</h2><p class="small" style="margin-top:.3rem">Saved in this browser only.</p></div>
+                            <div class="field"><label for="quiz-user-name">Name</label><input id="quiz-user-name" class="input" type="text" required autocomplete="name"></div>
+                            <div class="field"><label for="quiz-user-dept">Department or institution</label><input id="quiz-user-dept" class="input" type="text" required></div>
+                            <div><button type="submit" class="btn">Post ${quizState.score}/${total}</button></div>
+                        </form>` : ''}
+                    </div>
+
+                    <aside class="sticky" aria-label="Scoreboard">
+                        <h2 class="h3">Scoreboard</h2>
+                        <table class="board">
+                            <thead><tr><th>#</th><th>Name</th><th>Score</th></tr></thead>
+                            <tbody>
+                                ${scores.map((s, i) => `<tr><td>${i + 1}</td><td>${esc(s.name)}<small>${esc(s.dept)}</small></td><td>${s.score}/${s.total}</td></tr>`).join('')}
+                            </tbody>
+                        </table>
+                    </aside>
+                </div>
+                ${pager('quiz')}
+                </div></div>
+            </div>`;
+        }
+
+        function selectQuizOption(qi, oi) {
+            if (quizState.submitted) return;
+            quizState.answers[qi] = oi;
+            const y = window.scrollY;
+            renderCurrentPage(false);
+            window.scrollTo(0, y);
+        }
+        function submitQuiz() {
+            const left = quizState.answers.filter(a => a === null).length;
+            if (left > 0) {
+                showToast("Not finished", `${left} ${left === 1 ? 'question is' : 'questions are'} still unanswered.`, true);
+                return;
+            }
+            quizState.score = QUIZ_QUESTIONS.reduce((s, q, i) => s + (quizState.answers[i] === q.answer ? 1 : 0), 0);
+            quizState.submitted = true;
+            renderCurrentPage(false);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            showToast("Score ready", `You got ${quizState.score} out of ${QUIZ_QUESTIONS.length}. Explanations are below each question.`);
+        }
+        function resetQuiz() {
+            quizState = { answers: Array(QUIZ_QUESTIONS.length).fill(null), submitted: false, score: 0 };
+            renderCurrentPage(true);
+        }
+        function saveQuizScore(e) {
+            e.preventDefault();
+            const name = document.getElementById('quiz-user-name').value.trim();
+            const dept = document.getElementById('quiz-user-dept').value.trim();
+            if (!name || !dept) return;
+            const scores = getStoredData('ecosphere_scoreboard', DEFAULT_SCORES);
+            scores.unshift({ name, dept, score: quizState.score, total: QUIZ_QUESTIONS.length, badge: rankFor(quizState.score) });
+            setStoredData('ecosphere_scoreboard', scores);
+            showToast("Posted", `${name} is on the scoreboard.`);
+            const y = window.scrollY;
+            renderCurrentPage(false);
+            window.scrollTo(0, y);
+        }
+
+        // ---- Pledge ----
+        const PLEDGE_ITEMS = [
+            { label: "Stop using single-use plastic bags and bottles", co2: 110 },
+            { label: "Plant and look after at least five native trees this year", co2: 125 },
+            { label: "Separate waste into three bins and compost food scraps", co2: 160 },
+            { label: "Walk, carpool or take public transport for short trips", co2: 240 },
+            { label: "Cut home or hostel electricity and water use by a quarter", co2: 185 }
+        ];
+        function viewPledge() {
+            const pledges = getStoredData('ecosphere_pledges', [
+                { name: "Rouman", co2: 640 },
+                { name: "EPS volunteer team", co2: 520 }
+            ]);
+            const defaultTotal = PLEDGE_ITEMS.reduce((s, p) => s + p.co2, 0);
+            return `
+            <div class="view">
+                <section class="page-top"><div class="wrap">
+                    <p class="eyebrow"><b>15</b>Personal commitment</p>
+                    <h1 class="h1">Make a pledge and see what it adds up to</h1>
+                    <p class="lede">Choose what you will do. The estimates are rough annual savings for one person, in kilograms of CO₂ equivalent.</p>
+                
+                </div><span class="ghost" aria-hidden="true">15</span></section>
+                <div class="band last"><div class="wrap">
+
+                <div class="quiz-layout">
+                    <form id="pledge-form" onsubmit="generatePledgeCertificate(event)">
+                        <fieldset style="border:0;padding:0;margin:0">
+                            <legend class="legend" style="padding:0 0 .5rem">Your commitments</legend>
+                            <div style="border-top:1px solid var(--rule-strong)">
+                                ${PLEDGE_ITEMS.map(c => `
+                                <label class="check">
+                                    <input type="checkbox" name="commit" value="${c.co2}" checked>
+                                    <span>${c.label}<small>about ${c.co2} kg CO₂e a year</small></span>
+                                </label>`).join('')}
+                            </div>
+                        </fieldset>
+                        <div class="form-grid two" style="margin-top:2rem">
+                            <div class="field"><label for="pledge-name">Name</label><input id="pledge-name" class="input" type="text" required autocomplete="name"></div>
+                            <div class="field"><label for="pledge-org">University or city</label><input id="pledge-org" class="input" type="text" required></div>
+                            <div><button type="submit" class="btn">Create my certificate <span class="arrow">→</span></button></div>
+                        </div>
+                    </form>
+
+                    <div class="sticky" style="display:grid;gap:2.5rem">
+                        <div class="certificate" aria-live="polite">
+                            <p class="eyebrow">Pledge certificate · Fall 2026</p>
+                            <p class="cert-name" id="cert-holder">Your name</p>
+                            <p class="cert-org" id="cert-org">Your university or city</p>
+                            <p class="cert-body">has pledged to protect the environment through everyday choices, and to cut their carbon footprint where they can.</p>
+                            <div class="cert-co2"><span class="eyebrow">Estimated saving a year</span><strong id="cert-co2">${defaultTotal} kg</strong></div>
+                        </div>
+                        <div>
+                            <h2 class="h3">Recent pledges</h2>
+                            <ul class="plain-list" style="margin-top:.75rem;border-top:1px solid var(--rule-strong)">
+                                ${pledges.slice(0, 8).map(p => `<li><span>${esc(p.name)}</span><span>${p.co2} kg/yr</span></li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                ${pager('pledge')}
+                </div></div>
+            </div>`;
+        }
+        function generatePledgeCertificate(e) {
+            e.preventDefault();
+            const name = document.getElementById('pledge-name').value.trim();
+            const org = document.getElementById('pledge-org').value.trim();
+            const checked = Array.from(document.querySelectorAll('input[name="commit"]:checked'));
+            if (checked.length === 0) {
+                showToast("Nothing selected", "Choose at least one commitment.", true);
+                return;
+            }
+            const total = checked.reduce((s, el) => s + Number(el.value), 0);
+            document.getElementById('cert-holder').textContent = name;
+            document.getElementById('cert-org').textContent = org;
+            document.getElementById('cert-co2').textContent = `${total} kg`;
+            const pledges = getStoredData('ecosphere_pledges', [{ name: "Rouman", co2: 640 }, { name: "EPS volunteer team", co2: 520 }]);
+            pledges.unshift({ name, co2: total });
+            setStoredData('ecosphere_pledges', pledges);
+            showToast("Pledge saved", `Thank you, ${name}.`);
+        }
+
+        // ---- Community ----
+        function viewCommunity() {
+            const solutions = getStoredData('ecosphere_solutions', DEFAULT_SOLUTIONS);
+            return `
+            <div class="view">
+                <section class="page-top"><div class="wrap">
+                    <p class="eyebrow"><b>16</b>Open proposals</p>
+                    <h1 class="h1">Describe a problem. Propose a fix.</h1>
+                    <p class="lede">Any student, researcher or visitor can add a proposal. Endorse the ones you think are worth doing.</p>
+                
+                </div><span class="ghost" aria-hidden="true">16</span></section>
+                <div class="band last"><div class="wrap">
+
+                <div class="quiz-layout" style="grid-template-columns:minmax(0,1fr)">
+                    <div class="split flip" style="align-items:start">
+                        <form onsubmit="submitVisitorSolution(event)" class="form-grid sticky" style="position:sticky;top:5.5rem">
+                            <h2 class="h3">New proposal</h2>
+                            <div class="field"><label for="sol-author">Your name</label><input id="sol-author" class="input" type="text" required autocomplete="name"></div>
+                            <div class="field"><label for="sol-role">Affiliation</label><input id="sol-role" class="input" type="text" required placeholder="e.g. BS Environmental Sciences"></div>
+                            <div class="form-grid two">
+                                <div class="field"><label for="sol-scope">Scope</label>
+                                    <select id="sol-scope" class="select"><option>Local · Abbottabad / Campus</option><option>National · Pakistan</option><option>Global · Worldwide</option></select></div>
+                                <div class="field"><label for="sol-category">Category</label>
+                                    <select id="sol-category" class="select"><option>Climate & Energy</option><option>Waste & Circularity</option><option>Water Conservation</option><option>Biodiversity & Forests</option></select></div>
+                            </div>
+                            <div class="field"><label for="sol-title">Title</label><input id="sol-title" class="input" type="text" required></div>
+                            <div class="field"><label for="sol-problem">What is the problem?</label><textarea id="sol-problem" class="textarea" rows="3" required></textarea></div>
+                            <div class="field"><label for="sol-action">What would you do about it?</label><textarea id="sol-action" class="textarea" rows="4" required></textarea></div>
+                            <div><button type="submit" class="btn">Publish proposal</button></div>
+                        </form>
+
+                        <div>
+                            <div class="section-head"><h2 class="h3">${solutions.length} ${solutions.length === 1 ? 'proposal' : 'proposals'}</h2></div>
+                            ${solutions.length ? solutions.map(item => `
+                            <article class="proposal">
+                                <div class="proposal-top">
+                                    <span class="tag">${esc(item.category)} · ${esc(item.scope)}</span>
+                                    <button class="endorse" onclick="upvoteSolution(${item.id})" aria-label="Endorse ${esc(item.title)}, currently ${item.votes} endorsements">Endorse · ${item.votes}</button>
+                                </div>
+                                <h3>${esc(item.title)}</h3>
+                                <p class="by">${esc(item.author)}, ${esc(item.role)}</p>
+                                <dl>
+                                    <div><dt>PROBLEM</dt><dd>${esc(item.problem)}</dd></div>
+                                    <div><dt>PROPOSAL</dt><dd>${esc(item.solution)}</dd></div>
+                                </dl>
+                            </article>`).join('') : '<p class="empty">No proposals yet. Add the first one.</p>'}
+                        </div>
+                    </div>
+                </div>
+                ${pager('community')}
+                </div></div>
+            </div>`;
+        }
+        function submitVisitorSolution(e) {
+            e.preventDefault();
+            const g = id => document.getElementById(id).value.trim();
+            const solutions = getStoredData('ecosphere_solutions', DEFAULT_SOLUTIONS);
+            solutions.unshift({
+                id: Date.now(), author: g('sol-author'), role: g('sol-role'), scope: g('sol-scope'), category: g('sol-category'),
+                title: g('sol-title'), problem: g('sol-problem'), solution: g('sol-action'), votes: 1
+            });
+            setStoredData('ecosphere_solutions', solutions);
+            showToast("Published", "Your proposal is now in the list.");
+            renderCurrentPage(false);
+        }
+        function upvoteSolution(id) {
+            const solutions = getStoredData('ecosphere_solutions', DEFAULT_SOLUTIONS);
+            const t = solutions.find(s => s.id === id);
+            if (!t) return;
+            t.votes += 1;
+            setStoredData('ecosphere_solutions', solutions);
+            const y = window.scrollY;
+            renderCurrentPage(false);
+            window.scrollTo(0, y);
+            showToast("Endorsed", t.title);
+        }
+
+        // ---- References ----
+        function viewResearch() {
+            const papers = [
+                { authors: "IPCC", year: "2023", title: "Climate Change 2023: Synthesis Report. Sixth Assessment Report", journal: "IPCC, Geneva", id: "DOI 10.59327/IPCC/AR6-9789291691647", abstract: "Confirms human-caused warming of about 1.1°C and sets out the mitigation and adaptation pathways needed this decade." },
+                { authors: "Rockström, J., Gupta, J., Qin, D., Lade, S. J., Abrams, J. F., et al.", year: "2023", title: "Safe and just Earth system boundaries", journal: "Nature 619, 102–111", id: "DOI 10.1038/s41586-023-06083-8", abstract: "Quantifies safe limits for climate, biosphere integrity, freshwater and nutrient cycles, alongside justice criteria." },
+                { authors: "Geyer, R., Jambeck, J. R., & Law, K. L.", year: "2017", title: "Production, use, and fate of all plastics ever made", journal: "Science Advances 3(7), e1700782", id: "DOI 10.1126/sciadv.1700782", abstract: "The first global mass balance of plastics, showing that only about 9% of the plastic ever produced has been recycled." },
+                { authors: "Díaz, S., Settele, J., Brondízio, E. S., Ngo, H. T., et al.", year: "2019", title: "Pervasive human-driven decline of life on Earth points to the need for transformative change", journal: "Science 366(6471)", id: "DOI 10.1126/science.aax3100", abstract: "Summarises the IPBES assessment finding that around one million species face extinction without transformative change." },
+                { authors: "World Health Organization", year: "2021", title: "WHO global air quality guidelines: particulate matter (PM2.5 and PM10), ozone, nitrogen dioxide, sulfur dioxide and carbon monoxide", journal: "WHO, Geneva", id: "ISBN 978-92-4-003422-8", abstract: "Sets the annual PM2.5 guideline at 5 µg/m³ to protect public health from cardiopulmonary disease." }
+            ];
+            return `
+            <div class="view">
+                <section class="page-top"><div class="wrap">
+                    <p class="eyebrow"><b>17</b>Bibliography</p>
+                    <h1 class="h1">Papers and reports behind the figures</h1>
+                    <p class="lede">Where the numbers on the topic pages come from. Each entry has a DOI or ISBN you can look up.</p>
+                
+                </div><span class="ghost" aria-hidden="true">17</span></section>
+                <div class="band last"><div class="wrap">
+                <section style="border-top:1px solid var(--rule-strong)">
+                    ${papers.map((p, i) => `
+                    <article class="ref">
+                        <div><p class="ref-n">[${i + 1}]</p><p class="ref-year">${p.year}</p></div>
+                        <div>
+                            <h3>${p.title}</h3>
+                            <p class="meta">${p.authors} · <em>${p.journal}</em></p>
+                            <p class="abs">${p.abstract}</p>
+                            <p class="doi">${p.id}</p>
+                        </div>
+                    </article>`).join('')}
+                </section>
+                ${pager('research')}
+                </div></div>
+            </div>`;
+        }
+
+        // =========================================================================
+        // Render
+        // =========================================================================
+        function renderCurrentPage(scrollTop = true) {
+            const id = location.hash.slice(1) || 'home';
+            currentPage = PAGES.some(p => p.id === id) ? id : 'home';
+            const views = {
+                home: viewHome, about: viewAbout, sdgs: viewSDGs, milestones: viewMilestones,
+                abbottabad: viewAbbottabad, innovations: viewInnovations, quiz: viewQuiz,
+                pledge: viewPledge, community: viewCommunity, research: viewResearch
+            };
+            const html = THEME_DATA[currentPage] ? viewThemePage(currentPage) : (views[currentPage] || viewHome)();
+            document.getElementById('app-viewport').innerHTML = html;
+            document.querySelectorAll('[data-nav]').forEach(b => {
+                const on = b.dataset.nav === currentPage;
+                b.classList.toggle('active', on);
+                on ? b.setAttribute('aria-current', 'page') : b.removeAttribute('aria-current');
+            });
+            document.body.classList.toggle('photo-top', currentPage === 'home' || !!THEME_DATA[currentPage]);
+            document.title = (currentPage === 'home' ? 'EcoSphere Nexus' : SHORT_TITLES[currentPage] + ' – EcoSphere Nexus');
+            if (scrollTop) window.scrollTo({ top: 0, behavior: 'instant' });
+            const animate = scrollTop || firstRender; firstRender = false;
+            initMotion(animate);
+        }
+
+
+        // =========================================================================
+        // Motion: reveals, parallax, count-up, progress
+        // =========================================================================
+        const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        let revealIO = null, countIO = null, parallaxItems = [], ticking = false, firstRender = true;
+        const REVEAL_SEL = '.section-head, .tile, .fact, .stat, .panel, .panel-dark, .panel-leaf, .aside-fig, .prose, .mile, .issue, .ref, .ruled-item, .tech-item, .q, .proposal, .pager, .banner, .certificate, .facts-dl, .quiz-layout > aside, .source';
+
+        function countUp(el) {
+            const text = el.textContent;
+            const m = text.match(/\d[\d,]*\.?\d*/);
+            if (!m) return;
+            const raw = m[0], target = parseFloat(raw.replace(/,/g, ''));
+            if (!isFinite(target) || target === 0) return;
+            const dec = (raw.split('.')[1] || '').length;
+            const useComma = raw.includes(',');
+            const pre = text.slice(0, m.index), post = text.slice(m.index + raw.length);
+            const dur = 1400, t0 = performance.now();
+            const fmt = v => { let t = v.toFixed(dec); if (useComma) t = Number(t).toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec }); return t; };
+            (function step(now) {
+                const p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 4);
+                el.textContent = pre + fmt(target * e) + post;
+                if (p < 1) requestAnimationFrame(step); else el.textContent = text;
+            })(t0);
+        }
+
+        function initMotion(animate) {
+            if (revealIO) revealIO.disconnect();
+            if (countIO) countIO.disconnect();
+            parallaxItems = [];
+            const root = document.getElementById('app-viewport');
+            const vp = root;
+
+            if (!REDUCED) {
+                const q = (sel, fn) => root.querySelectorAll(sel).forEach(fn);
+                q('.hero-full .bg', el => parallaxItems.push({ el, mode: 'hero', k: .32 }));
+                q('.topic-hero .bg', el => parallaxItems.push({ el, mode: 'hero', k: .3 }));
+                q('.hero-word h1', el => parallaxItems.push({ el, mode: 'word', k: .2 }));
+                q('.seal', el => parallaxItems.push({ el, mode: 'hero', k: -.1 }));
+                q('.page-top .ghost', el => parallaxItems.push({ el, mode: 'rel', k: .12, max: 120 }));
+                q('.tile img', el => parallaxItems.push({ el, mode: 'rel', k: -.07, host: el.parentElement, maxPct: .09 }));
+            }
+
+            document.body.classList.toggle('motion', !REDUCED && animate && 'IntersectionObserver' in window);
+            if (!REDUCED && animate && 'IntersectionObserver' in window) {
+                revealIO = new IntersectionObserver(entries => {
+                    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); revealIO.unobserve(en.target); } });
+                }, { rootMargin: '0px 0px -8% 0px', threshold: .08 });
+                const seen = new Map();
+                root.querySelectorAll(REVEAL_SEL).forEach(el => {
+                    if (el.closest('.hero-full, .topic-hero, .page-top')) return;
+                    const parent = el.parentElement;
+                    const i = seen.get(parent) || 0; seen.set(parent, i + 1);
+                    el.style.setProperty('--d', (Math.min(i, 5) * 0.07).toFixed(2) + 's');
+                    el.classList.add('reveal');
+                    revealIO.observe(el);
+                });
+                countIO = new IntersectionObserver(entries => {
+                    entries.forEach(en => { if (en.isIntersecting) { countUp(en.target); countIO.unobserve(en.target); } });
+                }, { threshold: .6 });
+                root.querySelectorAll('.fact-n, .stat-v').forEach(el => countIO.observe(el));
+            }
+            onScroll();
+        }
+
+        function paint() {
+            ticking = false;
+            const y = window.scrollY, vh = window.innerHeight;
+            const bar = document.getElementById('scroll-progress');
+            const max = document.documentElement.scrollHeight - vh;
+            bar.style.transform = `scaleX(${max > 0 ? Math.min(1, y / max) : 0})`;
+            document.querySelector('.site-header').classList.toggle('scrolled', y > 40);
+            if (REDUCED) return;
+            for (const it of parallaxItems) {
+                if (it.mode === 'hero') {
+                    if (y < vh * 1.6) it.el.style.translate = `0 ${(y * it.k).toFixed(1)}px`;
+                } else if (it.mode === 'word') {
+                    if (y < vh * 1.2) { it.el.style.translate = `0 ${(y * it.k).toFixed(1)}px`; it.el.style.opacity = String(Math.max(0, 1 - y / (vh * .75))); }
+                } else {
+                    const host = it.host || it.el;
+                    const r = host.getBoundingClientRect();
+                    if (r.bottom < -200 || r.top > vh + 200) continue;
+                    let d = (r.top + r.height / 2 - vh / 2) * it.k;
+                    const lim = it.maxPct ? r.height * it.maxPct : it.max;
+                    d = Math.max(-lim, Math.min(lim, d));
+                    it.el.style.translate = `0 ${d.toFixed(1)}px`;
+                }
+            }
+        }
+        function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(paint); } }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll);
+
+        buildIndexDialog();
+        renderCurrentPage(false);
+    </script>
+</body>
+</html>
